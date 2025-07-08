@@ -1,0 +1,359 @@
+\documentclass[a4paper,dvipdfmx]{jsarticle}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{graphicx}
+\newcommand{\maru}[1]{\tikz[baseline=-0.7ex]{
+    \node[shape=circle,draw,inner sep=1pt,minimum size=5pt,anchor=center] {\footnotesize #1};}}
+\usepackage{lipsum}
+
+\begin{document}
+% 用tikz画圆角外框
+\scalebox{0.67}{%
+\rotatebox{270}{%
+\begin{tikzpicture}
+\node[draw, rounded corners=8pt, thick, inner sep=0pt] (tbl) {%
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+    \multicolumn{12}{c}{\rule{0pt}{15pt}\textbf{\Large I}} \\
+    \hline
+    \multirow{2}{*}{解答記号} & \multicolumn{11}{c}{解答欄(Answer)} \\
+    \cline{2-12}
+      & － & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+    \hline
+    A & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    B & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    C & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    D & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    E & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    F & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    G & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    H & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    I & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    J & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    K & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    L & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    M & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    N & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    O & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    P & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Q & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    R & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline   
+    S & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    T & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    U & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    V & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    W & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    X & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Y & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Z & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \end{tabular}
+};
+\end{tikzpicture}
+}
+}
+
+\vspace{1cm} % 可以根据需要调整距离，如1cm, 1.5cm等
+
+\scalebox{0.67}{%
+\rotatebox{270}{%
+\begin{tikzpicture}
+\node[draw, rounded corners=8pt, thick, inner sep=0pt] (tbl) {%
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+    \multicolumn{12}{c}{\rule{0pt}{15pt}\textbf{\Large II}} \\
+    \hline
+    \multirow{2}{*}{解答記号} & \multicolumn{11}{c}{解答欄(Answer)} \\
+    \cline{2-12}
+      & － & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+    \hline
+    A & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    B & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    C & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    D & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    E & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    F & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    G & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    H & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    I & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    J & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    K & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    L & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    M & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    N & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    O & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    P & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Q & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    R & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline   
+    S & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    T & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    U & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    V & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    W & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    X & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Y & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Z & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \end{tabular}
+};
+\end{tikzpicture}
+}
+}
+\newpage
+
+\scalebox{0.67}{%
+\rotatebox{270}{%
+\begin{tikzpicture}
+\node[draw, rounded corners=8pt, thick, inner sep=0pt] (tbl) {%
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+    \multicolumn{12}{c}{\rule{0pt}{15pt}\textbf{\Large III}} \\
+    \hline
+    \multirow{2}{*}{解答記号} & \multicolumn{11}{c}{解答欄(Answer)} \\
+    \cline{2-12}
+      & － & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+    \hline
+    A & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    B & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    C & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    D & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    E & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    F & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    G & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    H & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    I & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    J & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    K & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    L & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    M & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    N & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    O & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    P & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Q & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    R & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline   
+    S & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    T & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    U & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    V & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    W & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    X & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Y & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Z & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \end{tabular}
+};
+\end{tikzpicture}
+}
+}
+
+\vspace{0.5cm} % 可以根据需要调整距离，如1cm, 1.5cm等
+
+\scalebox{0.67}{%
+\rotatebox{270}{%
+\begin{tikzpicture}
+\node[draw, rounded corners=8pt, thick, inner sep=0pt] (tbl) {%
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+    \multicolumn{12}{c}{\rule{0pt}{15pt}\textbf{\Large IV}} \\
+    \hline
+    \multirow{2}{*}{解答記号} & \multicolumn{11}{c}{解答欄(Answer)} \\
+    \cline{2-12}
+      & － & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+    \hline
+    A & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    B & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    C & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    D & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    E & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    F & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    G & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    H & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    I & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    J & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    K & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    L & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    M & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    N & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    O & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    P & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Q & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    R & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline   
+    S & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    T & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    U & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    V & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    W & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    X & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Y & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Z & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \end{tabular}
+};
+\end{tikzpicture}
+}
+}
+
+\vspace{0.5cm}
+
+\scalebox{0.67}{%
+\rotatebox{270}{%
+\begin{tikzpicture}
+\node[draw, rounded corners=8pt, thick, inner sep=0pt] (tbl) {%
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+    \multicolumn{12}{c}{\rule{0pt}{15pt}\textbf{\Large V}} \\
+    \hline
+    \multirow{2}{*}{解答記号} & \multicolumn{11}{c}{解答欄(Answer)} \\
+    \cline{2-12}
+      & － & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+    \hline
+    A & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    B & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    C & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    D & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    E & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    F & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    G & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    H & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    I & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    J & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    K & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    L & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    M & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    N & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    O & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    P & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Q & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    R & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline   
+    S & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    T & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    U & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    V & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    W & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    X & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Y & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \hline
+    Z & \maru{-} & \maru{0} & \maru{1} & \maru{2} & \maru{3} & \maru{4} & \maru{5} & \maru{6} & \maru{7} & \maru{8} & \maru{9} \\
+    \end{tabular}
+};
+\end{tikzpicture}
+}
+}
+
+\end{document}

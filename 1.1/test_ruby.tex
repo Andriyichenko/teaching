@@ -1,0 +1,40 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{okumacro}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{tipa}
+\usepackage{tikz}
+
+\definecolor{headercolor}{RGB}{220,220,220}
+\definecolor{rowcolor1}{RGB}{245,245,245}
+\definecolor{rowcolor2}{RGB}{255,255,255}
+\begin{document}
+\begin{CJK}{UTF8}{min}  % 日文明朝体
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{>{\centering\arraybackslash}p{4cm} >{\centering\arraybackslash}p{4cm}}
+\toprule
+\rowcolor{headercolor}
+\textbf{日本語} & \textbf{中文} \\
+\midrule
+\rowcolor{rowcolor1}
+\ruby{挨拶}{あいさつ} & 问候 \\
+\rowcolor{rowcolor2}
+\ruby{勉強}{べんきょう} & 学习 \\
+\rowcolor{rowcolor1}
+\ruby{図書館}{としょかん} & 图书馆 \\
+\rowcolor{rowcolor2}
+\ruby{料理}{りょうり} & 料理 \\
+\rowcolor{rowcolor1}
+\ruby{電話}{でんわ} & 电话 \\
+\bottomrule
+\end{tabular}
+\end{center}
+$\overline{は}\underbrace{な}$\\
+$\stackrel{\mathrm{def}}{=}$
+\end{CJK}
+\end{document}

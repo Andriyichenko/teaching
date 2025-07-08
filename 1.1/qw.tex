@@ -1,0 +1,396 @@
+\documentclass[dvipdfmx,twoside]{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{CJKutf8}
+\usepackage{okumacro}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{tipa}
+\usepackage{tikz}
+\usepackage{fancybox}
+\usepackage{wasysym}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage{CJK}
+% 设置页面样式
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[RO]{数学–\thepage}
+\fancyhead[LE]{数学–\thepage}
+
+% 重新定义 plain 样式
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhead[RO]{数学-\thepage}%
+  \fancyhead[LE]{数学-\thepage}%
+}
+% 自定义A方框命令
+\newcommand{\abb}[1]{%
+\begin{tikzpicture}[baseline]
+\node[draw=black, 
+      rectangle, 
+      minimum width=0.8cm, 
+      minimum height=0.3cm, 
+      fill=gray!25, 
+      font=\bfseries,
+      line width=1pt,
+      inner sep=2pt,
+      anchor=base] {#1};
+\end{tikzpicture}%
+}
+\newcommand{\ab}[1]{%
+\begin{tikzpicture}[baseline]
+\node[draw=black, 
+      rectangle, 
+      minimum width=0.8cm, 
+      minimum height=0.3cm, 
+      font=\bfseries,
+      line width=1pt,
+      inner sep=2pt,
+      anchor=base] {#1};
+\end{tikzpicture}%
+}
+
+\newcommand{\maru}[1]{\tikz[baseline=-0.7ex]{
+    \node[shape=circle,draw,inner sep=1pt,minimum size=5pt,anchor=center] {\footnotesize #1};}}
+\definecolor{headercolor}{RGB}{220,220,220}
+\definecolor{rowcolor1}{RGB}{245,245,245}
+\definecolor{rowcolor2}{RGB}{255,255,255}
+
+% \title{\vspace{-1.5cm} 2025年8月羚課文科数学月考 }
+% \author{\textnosfal{Linc\ -\ 伊}}
+\date{}
+\begin{document}
+%第一部分
+\begin{CJK}{UTF8}{ipxm}  % 使用ipxm字体
+  %月考表纸部分
+\begin{center}
+
+\vspace*{5cm}
+
+% 学校logo
+\includegraphics[width=5cm]{pics/1.jpg}
+
+\vspace{2cm}
+
+% 主标题
+{\fontsize{24}{30}\selectfont\bfseries\sffamily
+2025年8月\\
+\vspace{1em}
+羚課文科数学月考
+}
+
+\end{center}
+\newpage
+\noindent
+\begin{tikzpicture}
+\node[draw, rectangle, minimum width=1cm, minimum height=0.8cm, font=\Huge] {I};
+\end{tikzpicture}
+\\
+\\
+\textbf{問1}\qquad $ x^2+y^2=4 $のとき、 $ 2x+y $の最大値は$\ab{\textsf{A}}\sqrt{\ab{\textsf{B}}}$\\
+
+2次関数$y = x^2 + 6x + 5$ のグラフを点$(1,3)$に関して対称移動してできるグラフの方程式は\\
+$$ y= \ab{\textsf{C}}\ x^2+\ab{\textsf{D}}\ x+\ab{\textsf{E}}$$
+\\
+\\
+\\
+\noindent
+\textbf{問2}\qquad $3a + 1$ が $a^2 + 5$ の約数となるような自然数 $a$ を求めよう。
+
+\vspace{2em}
+
+$3a + 1 = b$ とする。このとき
+
+\vspace{1em}
+
+\begin{center}
+$a^2 + 5 = \dfrac{b^2 - \ab{\textbf{F}}\ b + \ab{\textbf{GH}}}{\ab{\textbf{I}}}$ \hspace{2em} $\cdots\cdots$ \maru{1}
+\end{center}
+
+\vspace{1em}
+
+である。また、$b$ は $a^2 + 5$ の約数であるから、$a^2 + 5$ はある自然数 $c$ を用いて
+
+\vspace{1em}
+
+\begin{center}
+$a^2 + 5 = bc$ \hspace{2em} $\cdots\cdots$ \maru{2}
+\end{center}
+
+\vspace{1em}
+と表される。\maru{1}、\maru{2} から
+
+\vspace{1em}
+
+\begin{center}
+$b\left(\ab{\textsf{J}}\ c - b + \ab{K}\right) = \ab{LM}$
+\end{center}
+
+\vspace{1em}
+
+を得る。したがって、$b$ は \abb{LM} の約数である。この中で、$a$ が自然数となるのは $b =$ \ab{NO}
+
+\vspace{1em}
+
+である。したがって、$a = \ab{PQ}$ である。
+\newpage
+\begin{center}
+- 計算欄 (memo) -
+\end{center}
+\newpage
+%第二部分
+\noindent
+\begin{tikzpicture}
+\node[draw, rectangle, minimum width=1cm, minimum height=0.8cm, font=\Huge] {II};
+\end{tikzpicture}
+\\
+\\
+\noindent
+\textbf{問1}\qquad 大きさの異なる4枚のカードがある。これらのカードに赤、黒、青、黄の色を塗る。ただし、\\
+\hspace*{1em}どのカードにも1つの色のみを使い、また同じ色のカードが2枚以上あってもよいものとする。
+
+\vspace{1em}
+
+(1) \hspace{1em} 全部で \ab{\textsf{ABC}} 通りの塗り方がある。
+
+\vspace{1em}
+
+(2) \hspace{1em} 全部の色を使う塗り方は \ab{\textsf{DE}} 通りある。
+
+\vspace{1em}
+
+(3) \hspace{1em} 2枚は赤で、1枚が黒、1枚が青となるような塗り方は \ab{\textsf{FJ}} 通りある。
+
+\vspace{1em}
+
+(4) \hspace{1em} 3つの色を使う塗り方は \ab{\textsf{GHI}}  通りある。
+
+\vspace{1em}
+
+(5) \hspace{1em} 2つの色を使う塗り方は \ab{\textsf{JK}} 通りある。\\
+\\
+\\
+\\
+\textbf{問2}\qquad 2つの放物線\\
+\\
+$\ell: \quad y = ax^2 + 2bx + c$\\
+$m: \quad y = (a+1)x^2 + 2(b+2)x + c + 3$\\
+\\
+\begin{wrapfigure}{r}{0.4\textwidth}
+\vspace{-8em}
+\begin{tikzpicture}[scale=0.8]
+\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+\draw[->] (0,-2) -- (0,3) node[above] {$y$};
+\node[below left] at (0,0) {O};
+\node[above left] at (-2,0) {A};
+\node[below left] at (-1.5,-1.5) {B};
+\node[above right] at (-1,0) {C};
+\node[below right] at (1,0) {D};
+\fill (-2,0) circle (2pt);
+\fill (-1.5,-1.5) circle (2pt);
+\fill (-1,0) circle (2pt);
+\fill (1,0) circle (2pt);
+\end{tikzpicture}
+\end{wrapfigure}
+
+\noindent
+を考える。点 A, B, C, D が右図のような位置関係に
+\noindent
+あるとする。このとき，この 2 つの放物線のうち，
+\noindent
+一方は，3 点 A, B, C を通り，もう一方は，3 点 B,
+\noindent
+C, D を通るとする。
+
+\vspace{1em}
+\noindent
+(1)\quad 3 点 A, B, C を通る放物線は \ab{\textsf{L}} である。ただし、\\
+\ab{\textsf{L}} には，次の\maru{0}か\maru{1}のどちらか適するものを選びなさい。
+
+\vspace{0.5em}
+
+\begin{center}
+\begin{tabular}{cc}
+\maru{0} & 放物線 $\ell$ \\
+\maru{1} & 放物線 $m$
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+\noindent
+(2)\quad 2 つの放物線 $\ell, m$ は，どちらも 2 点 B, C を通るので，点 B, C の座標は，2 次方程式
+
+\[x^2 + \ab{\textsf{M}}\ x + \ab{\textsf{N} }= 0\]
+
+の解である。よって，点 B の $x$ 座標は \ab{\textsf{OP}}，点 C の $x$ 座標は \ab{\textsf{QR}} である。
+
+\vspace{1em}
+\noindent
+(3)\quad 特に，AB = BC, CO = OD のとき，$a, b, c$ の値を求めよう。\\
+
+\quad 2 点 C, D は $y$ 軸に関して対称であるから，$b = \ab{\textsf{S}}$ である。また，AB = BC より，\\
+
+直線 $x = \ab{\textsf{TU}}$ が\ \abb{L}\ の軸である。したがって，$a = -\ \ab{\textsf{V}}$ である。よって，\\
+
+
+$c = \ab{\textsf{W}}$ である。
+\newpage
+\begin{center}
+- 計算欄 (memo) -
+\end{center}
+\newpage
+%第三部分
+\noindent
+\begin{tikzpicture}
+\node[draw, rectangle, minimum width=1cm, minimum height=0.8cm, font=\Huge] {III};
+\end{tikzpicture}
+\\
+
+$n$ は 2 桁の自然数であり、$n^3$ を 66 で割ったときの余りは $n$ であるという。このような $n$
+\noindent
+の個数と、このような $n$ のうち素数であるものを求めよう。
+
+\vspace{2em}
+
+条件より、$n^3$ を 66 で割ったときの商を $p$ とすると
+
+\vspace{1em}
+
+\hspace{3em} $n^3 = \ab{\textsf{AB}}\ p + n$ \hspace{2em} $\left(0 < n \leq \ab{CD}\right)$
+
+\vspace{1em}
+\noindent
+と表せる。これを変形して
+
+\vspace{1em}
+
+\hspace{3em} $n(n - 1)(n + 1) = \abb{\textsf{AB}}\ p$
+
+\vspace{1em}
+\noindent
+を得る。
+
+\vspace{1em}
+ここで、$n - 1, n$ のどちらか一方は \ab{\textsf{E}} の倍数、$n - 1, n, n + 1$ のうち 1 つは \ab{\textsf{F}} の倍数であり、\\
+
+\noindent
+\abb{\textsf{E}} と \abb{\textsf{F}} は互いに素であるから、$n(n - 1)(n + 1)$ は \ab{\textsf{G}} の倍数である。\\
+
+\noindent
+ただし、$1 < \abb{\textsf{E}} < \abb{\textsf{F}} < \abb{\textsf{G}}$ とする。よって、$n - 1, n, n + 1$ のいずれか
+\vspace{1em}
+1 つが \ab{\textsf{HI}} の倍数となる場合を考えればよい。
+
+\vspace{1em}
+
+いま、$n \leq \abb{\textsf{CD}}$ であるから、$n - 1$ が \abb{\textsf{HI}} の倍数である $n$ の個数は \ab{\textsf{J}}、$n$ が \abb{\textsf{HI}} の倍数である $n$ の個数\\
+
+\noindent
+は \ab{\textsf{K}}、$n + 1$ が \abb{\textsf{HI}} の倍数である $n$ の個数は \ab{\textsf{L}}である。
+
+\vspace{2em}
+
+よって、求める $n$ の個数は \ab{\textsf{MN}} であり、このうち、素数である $n$ は小さい順に \ab{\textsf{OP}} 、\ab{\textsf{QR}} 、\ab{\textsf{ST}} である。
+
+\newpage
+\begin{center}
+- 計算欄 (memo) -
+\end{center}
+\newpage
+%第四部分
+\noindent
+\begin{tikzpicture}
+\node[draw, rectangle, minimum width=1cm, minimum height=0.8cm, font=\Huge] {IV};
+\end{tikzpicture}
+\\
+
+2 つの実数 $x, y$ が方程式
+
+\vspace{1em}
+
+$$3x^2 + 2xy + 3y^2 = 32 \hspace{3em} \cdots\cdots \maru{1}$$ 
+
+\vspace{1em}
+
+\noindent
+を満たしている。このとき、$x + y$ および $xy$ がとる値の範囲を求めよう。
+
+\vspace{2em}
+
+まず
+
+\vspace{1em}
+
+\hspace{3em} $x + y = a$ \hspace{3em} $\cdots\cdots$ \maru{2}
+
+\vspace{1em}
+
+\noindent
+とおく。\maru{1}、\maru{2} より $y$ を消去して、$x$ の 2 次方程式
+
+\vspace{1em}
+
+$$ \ab{\textsf{A}}\ x^2 -\ \ab{\textsf{B}}\ ax +\ \ab{\textsf{C}}\ a^2 - 32 = 0$$
+
+\vspace{1em}
+
+\noindent
+を得る。$x$ は実数であるから
+
+\vspace{1em}
+
+$$\ab{\textsf{DE}} \leq a \leq \ab{\textsf{F}} \hspace{3em} \cdots\cdots \maru{3}$$
+
+\vspace{1em}
+
+\noindent
+である。
+
+\vspace{1em}
+
+さらに
+
+\vspace{1em}
+
+
+$$xy = b \hspace{8em} \cdots\cdots \maru{4}$$
+
+\vspace{1em}
+
+\noindent
+とおくと、\maru{1}、\maru{2}、\maru{4} より
+
+\vspace{1em}
+
+$$b = \frac{\ab{\textsf{G}}}{\ab{\textsf{H}}}a^2 - \ab{\textsf{I}} \hspace{3em} \cdots\cdots \maru{5}$$
+
+\vspace{1em}
+
+\noindent
+を得る。よって、\maru{3}、\maru{5} より
+
+\vspace{1em}
+
+$$\ab{\textsf{JK}} \leq b \leq \ab{\textsf{L}}$$
+
+\vspace{1em}
+
+\noindent
+となる
+\newpage
+\begin{center}
+- 計算欄 (memo) -
+\end{center}
+
+\end{CJK}
+
+\end{document}
