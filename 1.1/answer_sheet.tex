@@ -2,12 +2,30 @@
 \usepackage{array}
 \usepackage{multirow}
 \usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
 \usepackage{graphicx}
 \newcommand{\maru}[1]{\tikz[baseline=-0.7ex]{
     \node[shape=circle,draw,inner sep=1pt,minimum size=5pt,anchor=center] {\footnotesize #1};}}
 \usepackage{lipsum}
 
 \begin{document}
+\begin{tikzpicture}[overlay, remember picture]
+    \node[anchor=north east] at ([xshift=-1cm,yshift=-1cm]current page.north east) {
+        \rotatebox{270}{%
+        \begin{tikzpicture}
+            % 绘制姓名填写区域
+            \draw[thick] (0,0) rectangle (8,2);
+            
+            % 添加"姓名"标签
+            \node[anchor=west] at (0.5,1.5) {\Large \textbf{姓名：}};
+            
+            % 绘制填写线
+            \draw[thick] (2,1) -- (7,1);
+            
+        \end{tikzpicture}
+        }
+    };
+\end{tikzpicture}
 % 用tikz画圆角外框
 \scalebox{0.67}{%
 \rotatebox{270}{%
