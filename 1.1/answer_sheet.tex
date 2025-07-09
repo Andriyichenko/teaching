@@ -9,23 +9,30 @@
 \usepackage{lipsum}
 
 \begin{document}
+\pagestyle{empty} % 不显示页眉页脚
+\scalebox{0.8}{%
 \begin{tikzpicture}[overlay, remember picture]
-    \node[anchor=north east] at ([xshift=-1cm,yshift=-1cm]current page.north east) {
-        \rotatebox{270}{%
-        \begin{tikzpicture}
-            % 绘制姓名填写区域
-            \draw[thick] (0,0) rectangle (8,2);
-            
-            % 添加"姓名"标签
-            \node[anchor=west] at (0.5,1.5) {\Large \textbf{姓名：}};
-            
-            % 绘制填写线
-            \draw[thick] (2,1) -- (7,1);
-            
-        \end{tikzpicture}
-        }
-    };
+  \node[anchor=north east] at ([xshift=2cm,yshift=-1cm]current page.north east) {
+    \rotatebox{270}{%
+    \begin{tikzpicture}
+      \draw[thick] (0,0) rectangle (8,3);
+      
+      % Add "Name" label
+      \node[anchor=west] at (0.5,2.3) {\Large \textbf{姓\quad 名:}};
+      
+      % Draw name input line
+      \draw[thick] (2.5,2.1) -- (7.5,2.1);
+      
+      % Add "Class" label
+      \node[anchor=west] at (0.5,1) {\Large \textbf{班\quad 級:}};
+      
+      % Draw class input line
+      \draw[thick] (2.5,0.8) -- (7.5,0.8);
+    \end{tikzpicture}
+    }%
+  };
 \end{tikzpicture}
+}
 % 用tikz画圆角外框
 \scalebox{0.67}{%
 \rotatebox{270}{%
@@ -165,6 +172,7 @@
 }
 }
 \newpage
+\thispagestyle{empty}
 
 \scalebox{0.67}{%
 \rotatebox{270}{%
