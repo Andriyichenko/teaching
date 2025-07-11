@@ -16,6 +16,8 @@
 \usepackage{geometry}
 \geometry{margin=2cm}
 \usepackage{fancyhdr}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usepackage[utf8]{inputenc}
 \usepackage{CJK}
 \usetikzlibrary{positioning, intersections, calc, arrows.meta, math, through}
@@ -134,6 +136,7 @@ colbacktitle=black,theorem style=standard,breakable,arc=10pt}
 %問題1の内容
 \newpage
 \section*{問題\textrm{I}}
+\setcounter{page}{1}
 \noindent
 \textbf{問1}\qquad $ x^2+y^2=4 $のとき、 $ 2x+y $の最大値は$\ab{\textsf{A}}\sqrt{\ab{\textsf{B}}}$\\
 
@@ -175,8 +178,6 @@ $ |-k| = |k|$により、 $ |k|\leq 2\sqrt{5}\ \implies -2\sqrt{5}\leq k\leq 2\s
 
 % 从圆心到直线的垂直距离
 \draw[dashed, green, thick] (0,0) -- ({sqrt(2)},{sqrt(2)});
-
-
 
 % 距离标注
 \node[below left] at ({sqrt(2)/2},{sqrt(2)/2}) {$r=2$};
@@ -480,8 +481,214 @@ $c = \dfrac{\ab{\textsf{X}}}{\ab{\textsf{Y}}}$ である。
 
 \noindent
 (3)\quad 点$C,D$は$y$軸に関して対称であるから、$\ell$の頂点$x$座標は$-\dfrac{2b}{2a}=-\dfrac{b}{a}=0$である。したがって、$b=\color{red}{0}$となる。$AB=BC$より、直線 $x=\color{red}{-3}$ が$m$の軸である。したがって、$m$の２次関数の頂点$x$座標により、$-\dfrac{2(b+4)}{2(a+2)}=-\dfrac{0+4}{a+2}=-3 \implies a=-\color{red}{\dfrac{2}{3}}$である。よって、$c=\dfrac{1}{2}$である。点$C:(-1,0)$を$\ell$の方程式に代入すると、 $a\times (-1)^2+2\times 0\times x+c=0 \implies -\dfrac{2}{3}+c=0 \implies c=\color{red}{\dfrac{2}{3}}$である。
+\newpage
+\section*{問題\textrm{III}}
+\noindent
+$n$ は 2 \ruby{桁}{けた}の自然数であり、$n^3$ を 78 で割ったときの余りは $n$ であるという。このような $n$
+\noindent
+の個数と、このような $n$ のうち素数であるものを求めよう。
 
+\vspace{2em}
+
+条件より、$n^3$ を 78 で割ったときの商を $p$ とすると
+
+\vspace{1em}
+
+\hspace{3em} $n^3 = \ab{\textsf{AB}}\ p + n$ \hspace{2em} $\left(0 < n \leq \ab{\textsf{CD}}\right)$
+
+\vspace{1em}
+\noindent
+と表せる。これを変形して 
+
+\vspace{1em}
+
+\hspace{3em} $n(n - 1)(n + 1) = \abb{\textsf{AB}}\ p$
+
+\vspace{1em}
+\noindent
+を得る。
+
+\vspace{1em}
+ここで、$n - 1, n$ のどちらか一方は \ab{\textsf{E}} の倍数、$n - 1, n, n + 1$ のうち 1 つは \ab{\textsf{F}} の倍数であり、\\
+
+\noindent
+\abb{\textsf{E}} と \abb{\textsf{F}} は互いに素であるから、$n(n - 1)(n + 1)$ は \ab{\textsf{G}} の倍数である。\\
+
+\noindent
+ただし、$1 < \abb{\textsf{E}} < \abb{\textsf{F}} < \abb{\textsf{G}}$ とする。よって、$n - 1, n, n + 1$ のいずれか
+\vspace{1em}
+1 つが \ab{\textsf{HI}} の倍数となる場合を考えればよい。
+
+\vspace{1em}
+
+いま、$n \leq \abb{\textsf{CD}}$ であるから、$n - 1$ が \abb{\textsf{HI}} の倍数である $n$ の個数は \ab{\textsf{J}}、$n$ が \abb{\textsf{HI}} の倍数である $n$ の個数\\
+
+\noindent
+は \ab{\textsf{K}}、$n + 1$ が \abb{\textsf{HI}} の倍数である $n$ の個数は \ab{\textsf{L}}である。
+
+\vspace{2em}
+
+よって、求める $n$ の個数は \ab{\textsf{MN}} であり、このうち、素数である $n$ は小さい順に \ab{\textsf{OP}} 、\ab{\textsf{QR}} 、\ab{\textsf{ST}} である。
+\\
+\\
+
+\kai\\
+
+\noindent
+(1)\quad $n^3$を$78$で割ったときの商を$p$とし、その余りは$n$である。したがって、 多項式の割り算(整式の除法)の定義により、$n^3={\color{red}{78}} p+n\ (0<n\leq {\color{red}{77}})$となる。\\
+
+\noindent
+(2)\quad $n^3-n=78p \implies n(n^2-1)=78p \implies n(n-1)(n+1)=78p$を得る。ここで、 $ 0<n\leq 77$、 $ n-1\leq 76 $、$n+1\leq 78$であるので、 $ n-1, n $のどちらか一方は${\color{red}{2}} $の倍数であり、$n-1,n,n+1$のいずれかは${\color{red}{3}}$の倍数であり、 $ 2 $と$3$は互いに素である。したがって、 $ n(n-1)(n+1) $は$2\times 3 = {\color{red}{6}}$の倍数である。\\
+
+\noindent
+(3)\quad ただし、$1<2<3<6$とする。よって、$n-1,n,n+1$のいずれか1つが$13$の倍数である場合を考えればよい。なぜかと言うと、$78=1\times 2\times 3\times 13$だからである。今、$n\leq 77$であるから、$n-1$が$13$の倍数であるケースは$n-1=13,26,39,52,65$である。$\implies\  n=14,27,40,53,66$であり、合わせて$n$の個数は {\color{red}{5}} である。$n$が$13$の倍数であるケースは$n=13,26,39,52,65$であり、合わせて$n$の個数は {\color{red}{5}} である。$n+1$が$13$の倍数であるケースは$n+1=13,26,39,52,65$である。$\implies\ n=12,25,38,51,64$であり、合わせて$n$の個数は {\color{red}{5}} である。\\
+
+\noindent
+(4)\quad よって、求める$n$の個数は $5+5+5={\color{red}{15}}$であり、このうち、素数である$n$は小さい順に${\color{red}{13}},{\color{red}{51}},{\color{red}{53}}$である。
+\newpage
+\section*{問題\textrm{IV}}
+\noindent
+2 つの実数 $x, y$ が方程式
+
+\vspace{1em}
+
+$$3x^2 + 2xy + 3y^2 = 50 \hspace{3em} \cdots\cdots \maru{1}$$ 
+
+\vspace{1em}
+
+\noindent
+を満たしている。このとき、$x + y$ および $xy$ がとる値の範囲を求めよう。(結果は既約分数で表せよ。)
+
+\vspace{2em}
+
+まず
+
+\vspace{1em}
+
+\hspace{3em} $x + y = a$ \hspace{3em} $\cdots\cdots$ \maru{2}
+
+\vspace{1em}
+
+\noindent
+とおく。\maru{1}、\maru{2} より $y$ を消去して、$x$ の 2 次方程式
+
+\vspace{1em}
+
+$$ \ab{\textsf{A}}\ x^2 -\ \ab{\textsf{B}}\ ax +\ \ab{\textsf{C}}\ a^2 - 50 = 0$$
+
+\vspace{1em}
+
+\noindent
+を得る。$x$ は実数であるから
+
+\vspace{1em}
+
+$$\ab{\textsf{DE}} \leq a \leq \ab{\textsf{F}} \hspace{3em} \cdots\cdots \maru{3}$$
+
+\vspace{1em}
+
+\noindent
+である。
+
+\vspace{1em}
+
+さらに
+
+\vspace{1em}
+
+
+$$xy = b \hspace{8em} \cdots\cdots \maru{4}$$
+
+\vspace{1em}
+
+\noindent
+とおくと、\maru{1}、\maru{2}、\maru{4} より
+
+\vspace{1em}
+
+$$b = \frac{\ab{\textsf{G}}\ a^2- \ab{\textsf{IJ}}}{\ab{\textsf{H}}}  \hspace{3em} \cdots\cdots \maru{5}$$
+
+\vspace{1em}
+
+\noindent
+を得る。よって、\maru{3}、\maru{5} より
+
+\vspace{1em}
+
+$$\dfrac{\ab{\textsf{KLM}}}{\ab{\textsf{N}}} \leq b \leq \dfrac{\ab{\textsf{OP}}}{\ab{\textsf{Q}}}$$
+
+\vspace{1em}
+
+\noindent
+となる
+\newpage
+\kai\\
+
+\noindent
+(1)\quad \maru{1}と\maru{2}により、 $\begin{cases} 3x^2 + 2xy + 3y^2 = 50 \\ x+y=a \end{cases}$によって、$y=a-x$とおいて、\maru{1}の式に代入すると、$3x^2 + 2x(a-x) + 3(a-x)^2 = 50 \implies 3x^2 + 2ax - 2x^2 + 3a^2 - 6ax + 3x^2 = 50 \implies  {\color{red}{4}} x^2 -{\color{red}{4}} ax +{\color{red}{3}} a^2-50=0$となる。\\
+
+\noindent
+(2)\quad したがって、$x$は実数であるから、関数 $Ax^2+Bx+C$ の判別式（$\Delta = B^2 - 4AC$）は非負である。したがって、
+\[
+(-4a)^2 - 4 \times 4 \times (3a^2 - 50) \geq 0 \implies\  16a^2 - 16(3a^2 - 50) \geq 0 \implies\  -32a^2 + 800 \geq 0 \implies\  a^2 \leq 25 \implies\  {\color{red}{-5}} \leq a \leq {\color{red}{5}}
+\]
+となる。\\
+
+\noindent
+(3)\quad さらに、$xy=b$とおくと、\maru{1}、\maru{2}、\maru{4}より、$\begin{cases} 3x^2 + 2xy + 3y^2 = 50 \\ x+y=a \\ xy=b \end{cases}$となる。$x^2+y^2=(x+y)^2-2xy$により、$x^2+y^2=a^2-2b$となる。したがって、\maru{1}の式に代入すると、$3(x^2+y^2)+2xy=50 \implies\  3(a^2-2b)+2b=50 \implies\  3a^2-6b+2b=50 \implies\  3a^2-4b=50 \implies\  b=\dfrac{{\color{red}{3}} a^2-{\color{red}{50}}}{{\color{red}{4}}}$となる。\\
+
+\noindent
+(4)\quad よって、\maru{3}、\maru{5}より、$\begin{cases}-5\leq a\leq 5\\b=\dfrac{3a^2-50}{4}\end{cases}$となる。$b=\dfrac{3a^2-50}{4}$の図は以下のようです。\\
+\\
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = center,
+    xlabel = $a$,
+    ylabel = $b$,
+    domain = -8:8,
+    samples = 100,
+    grid = major,
+    grid style = {dashed, gray!30},
+    width = 10cm,
+    height = 8cm,
+    xmin = -8, xmax = 8,
+    ymin = -15, ymax = 15,
+    xtick = {-6, -4, -2, 0, 2, 4, 6},
+    ytick = {-15, -10, -5, 0, 5, 10, 15},
+]
+
+% 関数のプロット
+\addplot[blue, thick, smooth] {(3*x^2 - 50)/4};
+
+% 頂点の点をマーク
+\addplot[red, mark=*, mark size=3pt] coordinates {(0, -12.5)};
+
+% 頂点のラベル
+\node[red, above right] at (0, -12.5) {$(0, -\dfrac{25}{2})$};
+
+% x切片をマーク
+\addplot[green, mark=*, mark size=3pt] coordinates {(4.08, 0)};
+\addplot[green, mark=*, mark size=3pt] coordinates {(-4.08, 0)};
+
+% x切片のラベル
+\node[green, above right] at (4.08, 0) {$(\sqrt{\frac{50}{3}}, 0)$};
+\node[green, above left] at (-4.08, 0) {$(-\sqrt{\frac{50}{3}}, 0)$};
+
+% 関数の式を表示
+\node[blue, above] at (6, 9) {$b = \frac{3a^2 - 50}{4}$};
+
+\end{axis}
+\end{tikzpicture}
+\\
+したがって、$-5\leq a\leq 5$より、\\
+
+$b=\dfrac{3a^2-50}{4}$の最小値は$a=-\dfrac{B}{2A}=-\dfrac{0}{2\times \dfrac{3}{4}}=0$の時、$b=-\dfrac{50}{4}=-\dfrac{25}{2}$。\\
+
+$b=\dfrac{3a^2-50}{4}$の最大値は端点$a=\pm 5$の時、$b=\dfrac{3\times (\pm 5)^2-50}{4}=\dfrac{75-50}{4}=\dfrac{25}{4}$。\\
+
+\noindent
+従って、$b$の範囲は${\color{red}{-\dfrac{25}{2}}} \leq b \leq\color{red}{ \dfrac{25}{4}}$ となる。\\
 \end{CJK}
 \end{document}
-
-
