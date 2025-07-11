@@ -24,6 +24,14 @@
 \usepackage{tcolorbox}
 \tcbuselibrary{theorems,breakable}
 \usepackage{enumerate}
+\usepackage{titlesec}
+
+% 自定义subsubsection格式
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}
+  {1.\arabic{subsubsection}}
+  {1em}
+  {}
 % 设置页面样式
 % \pagestyle{fancy}
 % \fancyhf{}
@@ -690,5 +698,76 @@ $b=\dfrac{3a^2-50}{4}$の最大値は端点$a=\pm 5$の時、$b=\dfrac{3\times (
 
 \noindent
 従って、$b$の範囲は${\color{red}{-\dfrac{25}{2}}} \leq b \leq\color{red}{ \dfrac{25}{4}}$ となる。\\
+\newpage
+\section*{付録}
+\hosoku\\
+\noindent
+\subsubsection{\textbf{\textgt{2次関数の軸と頂点の求め方}}}
+二次関数 $y = ax^2 + bx + c$ を平方完成して $y = a(x - p)^2 + q$ という形にすれば，軸と頂点がわかります。具体的には，\textcolor{red}{軸は $x = p$} で\textcolor{blue}{頂点は $(p, q)$}になります。\\
+
+\begin{tikzpicture}[scale=0.7]
+    % 座標軸
+    \draw[->] (-1.5, 0) -- (3, 0) node[right] {$x$};
+    \draw[->] (0, -0.5) -- (0, 3) node[above] {$y$};
+    \node at (-0.3, -0.3) {$O$};
+    
+    % 二次関数のグラフ
+    \draw[thick, smooth, domain=-1:2.5] plot (\x, {0.5*(\x-1)^2 + 0.5});
+    
+    % 軸（対称軸）
+    \draw[red, thick, dashed] (1, -0.5) -- (1, 2.5);
+    \node[red] at (1, -0.6) {軸 $x = p$};
+    
+    % 頂点
+    \fill[blue] (1, 0.5) circle (0.08);
+    \fill[black] (0, 0) circle (0.08);
+    \node[blue] at (2.2, 0.5) {頂点 $(p, q)$};
+    
+    % 関数式
+    \node at (3.1, 2.1) {$y = a(x - p)^2 + q$};
+\end{tikzpicture}
+\\
+\begin{reidai}{二次関数の軸の方程式と頂点の座標}
+22次関数 $y = 2x^2 +3x - 1$ の軸の方程式と頂点の座標を求めよ。
+\end{reidai}
+\ \\
+\kai \\
+
+\noindent
+$y = 2x^2 + 3x - 1$ を平方完成する。
+
+\begin{align*}
+y &= 2\left(x^2 + 2 \cdot \frac{3}{4}x\right) - 1\\
+ &= 2\left(x + \frac{3}{4}\right)^2 - \frac{9}{8} - 1\\
+ &= 2\left(x + \frac{3}{4}\right)^2 - \frac{17}{8}
+\end{align*}
+
+よって，
+
+\begin{itemize}
+\item 軸の方程式は $x = -\textcolor{red}{\frac{3}{4}}$
+\item 頂点の座標は $\textcolor{blue}{\left(-\frac{3}{4}, -\frac{17}{8}\right)}$
+\end{itemize}
+\subsubsection{\textbf{2次関数の軸と頂点を求める公式}}
+二次関数 $y = ax^2 + bx + c$ において，\\
+\noindent
+\textcolor{red}{軸の方程式は}\  $x = -\frac{b}{2a}$\\
+
+\noindent
+\textcolor{blue}{頂点の座標は}\  $\left(-\dfrac{b}{2a}, \dfrac{-b^2 + 4ac}{4a}\right)$
+\newpage
+\shomei\\
+
+
+これは証明できます。まず、二次関数の一般形 $y = ax^2 + bx + c$ を考えます。平方完成を用いると、次のように変形できます。
+
+\begin{align*}
+y &= a\left(x^2 + 2\times\dfrac{b}{2a}x\right) + c \\
+  &= a\left(x^2 + \dfrac{b}{2a}x\right)^2  - \left(\dfrac{b}{2a}\right)^2 + c \\
+  &= a\left(x + \dfrac{b}{2a}\right)^2 + \dfrac{-b^2+4ac}{4a}
+\end{align*}
+\\
+よって、軸の方程式は$x = -\dfrac{b}{2a}$、頂点の座標が $\left(-\dfrac{b}{2a}, \dfrac{-b^2 + 4ac}{4a}\right)$ であることがわかります。
+
 \end{CJK}
 \end{document}
