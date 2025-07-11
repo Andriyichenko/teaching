@@ -1,0 +1,396 @@
+\documentclass[dvipdfmx,twoside]{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{CJKutf8}
+\usepackage{okumacro}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{tipa}
+\usepackage{tikz}
+\usepackage{fancybox}
+\usepackage{wasysym}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage{CJK}
+\usepackage{esvect}
+% 设置页面样式
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[RO]{数学–\thepage}
+\fancyhead[LE]{数学–\thepage}
+
+% 重新定义 plain 样式
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhead[RO]{数学-\thepage}%
+  \fancyhead[LE]{数学-\thepage}%
+}
+% 自定义A方框命令
+\newcommand{\abb}[1]{%
+\begin{tikzpicture}[baseline]
+\node[draw=black, 
+      rectangle, 
+      minimum width=0.8cm, 
+      minimum height=0.3cm, 
+      fill=gray!25, 
+      font=\bfseries,
+      line width=1pt,
+      inner sep=2pt,
+      anchor=base] {#1};
+\end{tikzpicture}%
+}
+\newcommand{\ab}[1]{%
+\begin{tikzpicture}[baseline]
+\node[draw=black, 
+      rectangle, 
+      minimum width=0.8cm, 
+      minimum height=0.3cm, 
+      font=\bfseries,
+      line width=1pt,
+      inner sep=2pt,
+      anchor=base] {#1};
+\end{tikzpicture}%
+}
+
+\newcommand{\maru}[1]{\tikz[baseline=-0.7ex]{
+    \node[shape=circle,draw,inner sep=1pt,minimum size=5pt,anchor=center] {\footnotesize #1};}}
+\definecolor{headercolor}{RGB}{220,220,220}
+\definecolor{rowcolor1}{RGB}{245,245,245}
+\definecolor{rowcolor2}{RGB}{255,255,255}
+
+% \title{\vspace{-1.5cm} 2025年8月羚課文科数学月考 }
+% \author{\textnosfal{Linc\ -\ 伊}}
+\date{}
+\begin{document}
+
+\begin{CJK}{UTF8}{ipxm}  % 使用ipxm字体
+  %月考表纸部分
+\begin{center}
+
+\vspace*{5cm}
+
+% 学校logo
+\includegraphics[width=5cm]{pics/1.jpg}
+
+\vspace{2cm}
+
+% 主标题
+{\fontsize{24}{30}\selectfont\bfseries\sffamily
+2025年8月\\
+\vspace{1em}
+羚課理科数学月考
+}
+
+\end{center}
+\newpage
+%第一部分
+\noindent
+\begin{tikzpicture}
+\node[draw, rectangle, minimum width=1cm, minimum height=0.8cm, font=\Huge] {I};
+\end{tikzpicture}
+\\
+\\
+\textbf{問1}\qquad 2次関数 $f(x) = -x^2 + 4x + 6$ を考える。\\
+\\
+\\
+
+\vspace{2em}
+
+(1) \quad 放物線 $y = f(x)$ の頂点の座標は $\left(\ab{\textsf{A}}, \ab{\textsf{B}}\right)$ である。
+
+\vspace{2em}
+
+(2) \quad 放物線 $y = f(x)$ を $x$ 軸方向に $k$，$y$ 軸方向に $-5$ だけ平行移動して得られる放物線を $y = g(x)$ とすると
+
+\begin{align*}
+g(x) = -\left(x - \ab{\textsf{C}} - k\right)^2 + \ab{\textsf{D}}
+\end{align*}
+\\
+
+である。
+
+\vspace{1em}
+
+(3) \quad 次の文中の $\ab{\textsf{E}}$ には，この問いの下の選択肢 \maru{0}〜\maru{4} の中から，また，$\ab{\textsf{F}}$ には，この問いの下の選択肢\\
+\maru{5}〜\maru{9} の中から適するものを選びなさい。また，その他の $\ab{\phantom{AA}}$ には，適する数を入れなさい。
+
+\vspace{2em}
+関数 $g(x)$ の $-1 \leq x \leq 4$ における最大値が $3$ となるような $k$ の値を求めよう。
+関数 $g(x)$ の最大値は $\abb{\textsf{D}}$ であるから，$k$ は条件 $\ab{\textsf{E}}$ または $\ab{\textsf{F}}$ を満たす。
+
+したがって
+
+\begin{align*}
+k = \ab{\textsf{G}} - \sqrt{\ab{\textsf{H}}}, \qquad k = \ab{\textsf{I}} + \sqrt{\ab{\textsf{J}}}
+\end{align*}
+
+である。
+
+\vspace{2em}
+
+\begin{tabular}{ll@{\qquad}ll}
+\maru{0} & $k < -5$ かつ $k^2 + 6k + 7 = 0$ & \maru{5} & $k > 2$ かつ $k^2 - 6k + 4 = 0$ \\[0.5em]
+\maru{1} & $k < -5$ かつ $k^2 - 4k + 2 = 0$ & \maru{6} & $k > 2$ かつ $k^2 + 6k + 7 = 0$ \\[0.5em]
+\maru{2} & $k < -3$ かつ $k^2 + 7k + 6 = 0$ & \maru{7} & $k > 2$ かつ $k^2 - 4k + 2 = 0$ \\[0.5em]
+\maru{3} & $k < -3$ かつ $k^2 + 6k + 7 = 0$ & \maru{8} & $k > 4$ かつ $k^2 - 4k + 2 = 0$ \\[0.5em]
+\maru{4} & $k < -3$ かつ $k^2 - 4k + 2 = 0$ & \maru{9} & $k > 4$ かつ $k^2 + 6k + 7 = 0$ \\
+\end{tabular}
+\newpage
+\begin{center}
+- 計算欄 (memo) -
+\end{center}
+\newpage
+\textbf{問2} \quad 大中小3個のさいころを同時に投げて出た目の数をそれぞれ $x, y, z$ とし\\
+\\
+\\
+
+\begin{align*}
+x = y = z \quad &\text{である事象を } A, \\
+x + y + z = 7 \quad &\text{である事象を } B, \\
+x + y = z \quad &\text{である事象を } C
+\end{align*}
+
+とする。
+
+\vspace{3em}
+
+(1) \quad 事象 $A, B, C$ の起こる場合の数は，それぞれ
+
+\begin{align*}
+A \text{ が } \ab{\textsf{J}}, \quad B \text{ が } \ab{\textsf{KL}}, \quad C \text{ が } \ab{\textsf{MN}}
+\end{align*}
+
+である。
+
+\vspace{3em}
+
+(2) \quad 事象 $A \cap B$, $B \cap C$, $C \cap A$ の起こる場合の数は，それぞれ
+
+\begin{align*}
+A \cap B \text{ が } \ab{\textsf{O}}, \quad B \cap C \text{ が } \ab{\textsf{P}}, \quad C \cap A \text{ が } \ab{\textsf{Q}}
+\end{align*}
+
+である。
+
+\vspace{3em}
+
+(3) \quad 事象 $B \cup C$ の起こる確率 $P(B \cup C)$ は
+
+\begin{align*}
+P(B \cup C) = \frac{\ab{\textsf{RS}}}{\ab{\textsf{TUV}}}
+\end{align*}
+
+である。
+\newpage
+\begin{center}
+- 計算欄 (memo) -
+\end{center}
+\newpage
+%第二部分
+\noindent
+\begin{tikzpicture}
+\node[draw, rectangle, minimum width=1cm, minimum height=0.8cm, font=\Huge] {II};
+\end{tikzpicture}
+\\
+\textbf{問1} \quad 2つのベクトル $\vec{a}$ と $\vec{b}$ のなす角は $60°$ であり，$|\vec{a}| = 1$，$|\vec{b}| = 2$ とする。また，実数 $x$ に対して，$\vec{u} = x\vec{a} + \vec{b}$，$\vec{v} = x\vec{a} - \vec{b}$ とする。$x > 1$ のとき，$\vec{u}$ と $\vec{v}$ のなす角が $45°$ となるような $x$ の値を求めよう。以下，$\vec{u} \cdot \vec{v}$ は $\vec{u}$ と $\vec{v}$ の内積を表し，$\vec{a} \cdot \vec{b}$ は $\vec{a}$ と $\vec{b}$ の内積を表す。
+
+\vspace{2em}
+まず，ベクトル $\vec{u}$ と $\vec{v}$ のなす角は $30°$ であるから
+
+\begin{align*}
+\left(\vec{u} \cdot \vec{v}\right)^2 = \frac{\ab{\textsf{A}}}{\ab{\textsf{B}}} |\vec{u}|^2 |\vec{v}|^2
+\end{align*}
+
+\noindent
+を得る。$\vec{a} \cdot \vec{b} = \ab{\textsf{C}}$ であることに注意して，この式を $x$ で表すと
+
+\begin{align*}
+x^4 - \ab{\textsf{DE}} x^2 + \ab{\textsf{FG}} = 0
+\end{align*}
+
+\noindent
+となる。これを変形して
+
+\begin{align*}
+\left(x^2 - \ab{\textsf{H}}\right)^2 = \left(\ab{\textsf{I}} x\right)^2
+\end{align*}
+
+\noindent
+を得る。
+
+したがって，$x > 1$ に注意して，これを解くと
+
+\begin{align*}
+x = \ab{\textsf{J}} + \sqrt{\ab{\textsf{KL}}}
+\end{align*}
+
+となる。
+\newpage
+\begin{center}
+- 計算欄 (memo) -
+\end{center}
+\newpage
+\textbf{問2} \quad 複素数平面上で，$z^3$ が実数となるような複素数 $z$ を考える。\\
+\\
+
+\vspace{2em}
+
+(1) \quad 上の条件を満たす複素数 $z = x + iy$ が描く図形を $C$ とする。その複素数 $z$ の偏角は
+
+\begin{align*}
+\arg z = \frac{\pi}{\ab{\textsf{M}}} k \quad (k \text{ は整数})
+\end{align*}
+
+を満たすので，図形 $C$ は $x, y$ の方程式
+
+\begin{align*}
+y = \ab{\textsf{N}}, \quad y = \sqrt{\ab{\textsf{O}}} x, \quad y = -\sqrt{\ab{\textsf{P}}} x
+\end{align*}
+
+で表される3直線である。\\
+
+
+\vspace{2em}
+
+(2) \quad $C$ 上に $|z - 1 - i| = r$ を満たす複素数 $z$ がただ1個だけ存在するとする。このとき，$r$ の値は
+
+\begin{align*}
+r = \frac{\sqrt{\ab{\textsf{Q}}} - \ab{\textsf{R}}}{\ab{\textsf{S}}}
+\end{align*}
+\\
+
+となる。また，そのときの $z$ の値は
+
+\begin{align*}
+z = \frac{\ab{\textsf{T}} + \sqrt{\ab{\textsf{U}}}}{\ab{\textsf{V}}} \left(1 + \sqrt{\ab{\textsf{W}}} i\right)
+\end{align*}
+
+である。
+\newpage
+\begin{center}
+- 計算欄 (memo) -
+\end{center}
+\newpage
+%第三部分
+\noindent
+\begin{tikzpicture}
+\node[draw, rectangle, minimum width=1cm, minimum height=0.8cm, font=\Huge] {III};
+\end{tikzpicture}
+\\
+
+3次関数
+\begin{align*}
+f(x) = \frac{1}{3}x^3 - \frac{t + 2}{2}x^2 + 2tx + \frac{2}{3}
+\end{align*}
+\\
+
+の区間 $x \leq 4$ における最大値が $6$ より大きくなるような実数 $t$ の値の範囲を求めよう。
+
+\vspace{3em}
+まず，$f(x)$ の導関数は
+\begin{align*}
+f'(x) = (x - \ab{\textsf{A}})(x - t)
+\end{align*}
+\\
+
+であるから，$t$ の値の範囲を次のように分けて考える。
+
+\vspace{3em}
+(i) \quad $t > \abb{\textsf{A}}$ のとき，$f(x)$ は $x = \abb{\textsf{A}}$ で極大，$x = t$ で極小となる。また，$f(4) = \ab{\textsf{B}}$ であるから\\[0.5em]
+\qquad\quad\  $f\left(\abb{\textsf{A}}\right) > 6$ となる $t$ の値の範囲を求めればよい。
+
+\vspace{3em}
+(ii) \quad $t = \abb{\textsf{A}}$ のとき，区間 $x \leq 4$ における $f(x)$ の最大値は $f\left(\ab{\textsf{C}}\right) = \ab{\textsf{D}}$ となり，条件は満たされない。
+
+\vspace{3em}
+(iii) \quad $t < \abb{\textsf{A}}$ のとき，$f(x)$ は $x = t$ で極大，$x = \abb{\textsf{A}}$ で極小となる。また，$f(4) = \abb{\textsf{B}}$ であるから，\\[0.5em]
+\qquad\quad\ $f(t) > 6$ となる $t$ の値の範囲を求めればよい。
+
+\vspace{3em}
+
+\hspace{1cm} ここで
+\begin{align*}
+f(t) - 6 = -\frac{1}{6}\left(t + \ab{\textsf{E}}\right)\left(t - \ab{\textsf{F}}\right)^2
+\end{align*}
+
+\hspace{0.7cm} であることに注意する。
+
+\vspace{2em}
+
+以上より，求める $t$ の値の範囲は
+
+\begin{align*}
+t > \frac{\ab{\textsf{GH}}}{\ab{\textsf{I}}} \quad \text{または} \quad t < \ab{\textsf{JK}}
+\end{align*}
+
+である。
+\newpage
+\begin{center}
+- 計算欄 (memo) -
+\end{center}
+\newpage
+%第四部分
+\noindent
+\begin{tikzpicture}
+\node[draw, rectangle, minimum width=1cm, minimum height=0.8cm, font=\Huge] {IV};
+\end{tikzpicture}
+\\
+
+関数
+\begin{align*}
+f(x) = \dfrac{\sin x}{3 - 2\cos x} \quad (0 \leq x \leq \pi)
+\end{align*}
+を考える。
+
+\vspace{2em}
+
+\noindent
+(1) \quad $f(x)$ の導関数は
+\begin{align*}
+f'(x) = \dfrac{\ab{\textsf{A}} \cos x - \ab{\textsf{B}}}{\left(\ab{\textsf{C}} - \ab{\textsf{D}} \cos x\right)^2}
+\end{align*}
+
+である。したがって，関数 $f(x)$ が極値をとる $x$ の値を $\alpha$ とおくと
+\begin{align*}
+\cos \alpha = \dfrac{\ab{\textsf{E}}}{\ab{\textsf{F}}}
+\end{align*}
+
+である。
+
+\vspace{2em}
+
+\noindent
+(2) \quad 関数 $y = f(x)$ のグラフと $x$ 軸によって囲まれる部分は直線 $x = \alpha$ によって2つの部分に分けられる。\\[0.5em]
+
+\qquad その左側の部分の面積を $S_1$ とおくと\\
+
+\begin{align*}
+S_1 = \displaystyle\int\limits_{\dfrac{\ab{\textsf{G}}}{\ab{\textsf{H}}}}^{\ab{\textsf{I}}} \dfrac{dt}{\ab{\textsf{J}} - \ab{\textsf{K}}\ t} dx = \dfrac{\ab{\textsf{L}}}{\ab{\textsf{M}}} \log \dfrac{\ab{\textsf{N}}}{\ab{\textsf{O}}}
+\end{align*}
+\\
+
+である。
+
+\vspace{1em}
+
+また，右側の部分の面積を $S_2$ とおくと
+\begin{align*}
+S_2 = \dfrac{\ab{\textsf{P}}}{2} \log \ab{\textsf{Q}}
+\end{align*}
+
+である。
+\newpage
+\begin{center}
+- 計算欄 (memo) -
+\end{center}
+
+\end{CJK}
+\end{document}
