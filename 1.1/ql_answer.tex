@@ -512,7 +512,83 @@ r = \sqrt{\ab{\textsf{Q}}}- \ab{\textsf{R}}
 z = \frac{\ab{\textsf{S}} + \sqrt{\ab{\textsf{T}}}}{\ab{\textsf{U}}} \left(1 + \sqrt{\ab{\textsf{V}}} i\right)
 \end{align*}
 
-である。
+である。\\
+\newpage
+\kai\\
+
+\noindent
+(1)\quad 問題文により、$ z=x+iy $とすると、 極座標に変形し、$ z=rcos(\theta)+irsin(\theta) $となる。
+、その後、極座標の$z$を用いて$z^3$を計算すると、$ z^3=(rcos(\theta)+irsin(\theta))^3 =r^3(cos(\theta)+isin(\theta))^3$となる。
+{\color{blue}{ド$\cdot$モアブル定理}} により、$(cos(\theta)+isin(\theta))^3=cos(3\theta)+isin(3\theta)$となるので、上の$z^3$の式に代入すると、 $ z^3=r^3(cos(3\theta)+isin(3\theta)) $となる。
+問題の条件: $ z^3 $が実数なので、 $ r^3 sin(3 \theta)=0 $となる。したがって、 $ sin(3 \theta)=0\ \implies\ 3 \theta=k\pi\ (k\in \mathbb{Z})\ \implies\ \theta=\dfrac{k\pi}{3} $となる。
+以上より、$ z=rcos(\theta)+irsin(\theta) $の偏角 $ arg\ z = \dfrac{\pi}{3} k $である。\\
+
+\hosoku\\
+{\color{blue}{ド$\cdot$モアブル定理}}:$(cos(\theta)+isin(\theta))^n=cos(n\theta)+isin(n\theta)$\\
+
+\shomei\\
+$ n\neq \phi $とおくと、
+\begin{align*}
+\left(cos(\theta)+isin(\theta)\right)\left(cos(\phi)+isin(\phi)\right) &=cos(\theta)cos(\phi)+isin(\theta)cos(\phi)+icos(\theta)sin(\phi)-sin(\theta)sin(\phi) \\
+&=cos(\theta)cos(\phi)-sin(\theta)sin(\phi)+i\left(cos(\theta)sin(\phi)+sin(\theta)cos(\phi)\right) \\
+&=cos(\theta+\phi)+isin(\theta+\phi) \\
+\end{align*}
+$ \phi = \theta $のとき、$\left(cos(\theta)+isin(\theta)\right)\left(cos(\theta)+isin(\theta)\right) = (cos(\theta)+isin(\theta))^2=cos(\theta+\theta)+isin(\theta+\theta)=cos(2\theta)+isin(2\theta) $となる。
+したがって、$n$のときには、$(cos(\theta)+isin(\theta))^n=cos(\theta+\cdots+\theta)+isin(\theta+\cdots+\theta)=cos(n\theta)+isin(n\theta)$が成り立つ。\\
+
+\begin{tikzpicture}[scale=2.2]
+  % 圆心和半径
+  \coordinate (CircleCenter) at (1.5, 1.5);
+  \def\radius{2.12132}
+  
+  % 点O, A, C的坐标
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (2,0);
+  \coordinate (C) at (0,3);
+  
+  % 计算B点坐标，使得∠BAC=60°且B在圆上
+  \path[name path=circle] (CircleCenter) circle (\radius);
+  \path[name path=line] (A) -- ++(53.13:4cm);
+  \path[name intersections={of=circle and line, by=B}];
+  
+  % 外接圆
+  \draw[thick] (CircleCenter) circle (\radius);
+  
+  % 三角形
+  \draw[thick] (A) -- (B) -- (C) -- cycle;
+
+  % 顶点
+  \fill (O) circle (0.03);
+  \fill (A) circle (0.03);
+  \fill (B) circle (0.03);
+  \fill (C) circle (0.03);
+  \fill (CircleCenter) circle (0.02);
+
+  % 标签
+  \node[below] at (A) {$A(2, 0)$};
+  \node[above right] at (B) {$B(3, 2)$};
+  \node[above left] at (C) {$C(0, 3)$};
+  \node[below left] at (O) {$O(0, 0)$};
+  \node[below right] at (CircleCenter) {圆心};
+  
+  % 标记∠BAC
+  \path (A) -- (C) coordinate[pos=0.5] (AC_mid);
+  \path (A) -- (B) coordinate[pos=0.5] (AB_mid);
+  \coordinate (angle_start) at ($(A)!0.4cm!(C)$);
+  \coordinate (angle_end) at ($(A)!0.4cm!(B)$);
+  \draw[thick] (angle_start) arc (123.69:53.13:0.4cm);
+  \node at ($(A) + (88:0.6)$) {$60^\circ$};
+  
+  % 从A到B和A到C的辅助线用于角度标记
+  \draw[gray, dashed] (A) -- ($(A)+(0.5,0)$);
+
+  % 坐标轴
+  \draw[->,gray!80] (-0.5,0) -- (4,0) node[right] {$x$};
+  \draw[->,gray!80] (0,-0.5) -- (0,4) node[above] {$y$};
+\end{tikzpicture}
+
+
+
 
 \end{CJK}
 \end{document}

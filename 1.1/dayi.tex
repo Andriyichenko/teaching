@@ -1,0 +1,344 @@
+\documentclass[dvipdfmx,a4paper,12pt]{jarticle}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning, intersections, calc, arrows.meta, math, through}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,breakable}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{xspace}
+\usepackage{newpxtext}
+\usepackage[utf8]{inputenc} %中国語コンパイル環境-cjkホットショット
+\usepackage{CJKutf8} %中国語コンパイル環境
+\usepackage{okumacro} %漢字ruby
+\renewcommand{\abstractname}{注意事項}
+\newtagform{textbf}[	extbf]{[}{]}
+\usetagform{textbf}
+\newcommand*{\ie}{\textbf{\textit{i.e.}}\@\xspace}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newtcbtheorem[]{reidai}{例題}
+{fonttitle=\gtfamily\sffamily\bfseries\upshape\large,
+colframe=black,colback=black!15!white,
+rightrule=1pt,leftrule=1pt,bottomrule=2pt,
+colbacktitle=black,theorem style=standard,breakable,arc=10pt}
+{tha}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\newtheoremstyle{mystyle}%
+  {}%                      % 上部スペース
+  {}%                      % 下部スペース
+  {}%                      % 本文フォント
+  {}%                      % 1行目のインデント量
+  {\bfseries}%             % 見出しフォント
+  :%                       % 見出し後の句読点
+  { }%                     % 見出し後のスペース
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+\theoremstyle{mystyle}
+% \setcounter{section}{0}
+% \stepcounter{section}
+% セクションカウンターを使用するが、表示はしない新しいセクションコマンドを作成
+\newtheorem{dfn}{\texttt{Def.}}[section]
+\newtheorem{exm}[dfn]{\texttt{Ex.}}
+\newtheorem{prop}[dfn]{\texttt{Prop.}}
+\newtheorem{lem}[dfn]{\texttt{Lem.}}
+\newtheorem{thm}[dfn]{\texttt{Thm.}}
+\newtheorem{cor}[dfn]{\texttt{Cor.}}
+\newtheorem{rem}[dfn]{\texttt{Rem.}}
+\newtheorem{fact}[dfn]{\texttt{Fact}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\usepackage{lipsum} % 用于生成示例文本
+\usepackage{float} % 强制浮动
+\usepackage{tikz} % 用于定位
+%排版
+\newcommand{\kai}%解答
+{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (3.3,1) node{\large\textgt{解 答}};
+\draw[thick, rounded corners=3pt,] (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2)--cycle;
+\end{tikzpicture};}
+\newcommand{\shomei}%証明
+{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (3.3,1) node{\textgt{証 明}};
+\draw[double,thick,rounded corners=3pt,] (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2)--cycle;
+\end{tikzpicture};}
+%補足
+\newcommand{\hosoku}{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (6,1) node{\large\textgt{補足}};
+\fill (0,1)--(1,0)--(2,1)--(1,2)--cycle;
+\fill[gray] (1,1)--(2,0)--(3,1)--(2,2)--cycle;
+\fill (2,1)--(3,0)--(4,1)--(3,2)--cycle;
+\fill (10,1)--(11,0)--(12,1)--(11,2)--cycle;
+\fill[gray] (9,1)--(10,0)--(11,1)--(10,2)--cycle;
+\fill (8,1)--(9,0)--(10,1)--(9,2)--cycle;
+\end{tikzpicture};}
+\newcommand{\abb}[1]{%
+\begin{tikzpicture}[baseline]
+\node[draw=black, 
+      rectangle, 
+      minimum width=0.8cm, 
+      minimum height=0.3cm, 
+      fill=gray!25, 
+      font=\bfseries,
+      line width=1pt,
+      inner sep=2pt,
+      anchor=base] {#1};
+\end{tikzpicture}%
+}
+\newcommand{\ab}[1]{%
+\begin{tikzpicture}[baseline]
+\node[draw=black, 
+      rectangle, 
+      minimum width=0.8cm, 
+      minimum height=0.3cm, 
+      font=\bfseries,
+      line width=1pt,
+      inner sep=2pt,
+      anchor=base] {$#1$};
+\end{tikzpicture}%
+}
+
+\newcommand{\maru}[1]{\tikz[baseline=-0.7ex]{
+    \node[shape=circle,draw,inner sep=1pt,minimum size=5pt,anchor=center] {\footnotesize #1};}}
+\definecolor{headercolor}{RGB}{220,220,220}
+\definecolor{rowcolor1}{RGB}{245,245,245}
+\definecolor{rowcolor2}{RGB}{255,255,255}
+%注意
+\newcommand{\chui}{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\fill (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2);
+\draw (3.3,1) node[white]{\large\textgt{注意！}};
+\draw[thick] (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2)--cycle;
+\end{tikzpicture};}
+\title{\vspace{-3cm} 蔡さんへのTouch連絡}  %タイトル
+\author{Linc\ -\ 伊}  %著者名
+\date{}  %日付
+\begin{document}
+\maketitle
+%\vspace{-0.4cm}
+%\begin{figure}[H]
+%\centering
+%\begin{tikzpicture}[remember picture, overlay]
+%   \node[anchor=north east] at (current page.north east) {%
+%        \includegraphics[width=2cm]{pics/qr.png} % 修正图片地址
+%    };
+%    \node[anchor=north east, yshift=-2cm] at (current page.north east) {デジタル版はここ};
+%\end{tikzpicture}
+%\label{fig:my_label}
+%\end{figure}
+%\begin{abstract} %概要
+  %注意事項
+%\end{abstract}
+%\begin{reidai}{2次方程式}{解答}
+%\end{reidai}
+%\begin{proof}
+%\end{proof}
+\section*{\textbf{問題}}
+$a, b, c$ を正の実数とする。座標平面上の3点 $\mathsf{A}(a, 0)$, $\mathrm{B}(3, b)$, $\mathrm{C}(0, c)$ を頂点とする三角形 $\mathrm{ABC}$ を考える。その三角形 $\mathrm{ABC}$ の外接円は原点 $\mathrm{O}(0, 0)$ を通り，$\angle \mathrm{BAC} = 60°$ とする。
+
+\begin{enumerate}
+\item[(1)] $\angle \mathrm{AOB} = \ab{\mathsf{AB}}°$ であるから，$b = \sqrt{\ab{\mathsf{C}}}$ である。
+
+\item[(2)] 外接円を表す方程式は
+\begin{align*}
+\left(x - \frac{a}{\ab{\mathsf{D}}}\right)^2 + \left(y - \frac{c}{\ab{\mathsf{E}}}\right)^2 = \frac{a^2 + c^2}{\ab{\mathsf{F}}} 
+\end{align*}
+であり，$c$ は $a$ を用いて $c = \sqrt{\ab{\mathsf{G}}}(\ab{\mathsf{H}} - a)$ と表される。
+
+\item[(3)] 線分 $\mathsf{OB}$ と線分 $\mathsf{AC}$ の交点を $\mathsf{D}$ とし，$\angle \mathsf{OAC} = \alpha$，$\angle \mathsf{ADB} = \beta$ とおく。
+
+$a = 2\sqrt{3}$ のとき
+\begin{align*}
+\tan \alpha = \ab{\mathsf{I}} - \sqrt{\ab{\mathsf{J}}}, \quad \tan \beta = \ab{\mathsf{K}}
+\end{align*}
+である。
+\end{enumerate}
+\newpage
+\section*{\textbf{解答}}
+\begin{tikzpicture}[scale=1.2]
+  \def\a{3}
+  \def\c{3}
+  \coordinate (CircleCenter) at (\a/2, \c/2);
+  \pgfmathsetmacro{\radius}{sqrt((\a/2)^2 + (\c/2)^2)}
+  
+  % 点O, A, C的坐标
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (\a,0);
+  \coordinate (C) at (0,\c);
+  
+  % 将B点放在圆上的红色弧长的右边端点处
+  \coordinate (B) at ({\a/2+\radius}, {\c/2});
+  
+  % 外接圆
+  \draw[thick] (CircleCenter) circle (\radius);
+  
+  % 三角形
+  \draw[thick] (A) -- (B) -- (C) -- cycle;
+  \draw[dashed] (O) -- (B);
+
+  % 计算并标记线段 OB 与 CA 的交点 D
+  \path[name path=lineOB] (O) -- (B);
+  \path[name path=lineCA] (C) -- (A);
+  \path[name intersections={of=lineOB and lineCA,by=D}];
+  \fill (D) circle (0.05);
+  \node[below] at (D) {$D$};
+
+  % 顶点
+  \fill (O) circle (0.03);
+  \fill (A) circle (0.03);
+  \fill (B) circle (0.03);
+  \fill (C) circle (0.03);
+  \fill (CircleCenter) circle (0.05);
+
+  % 标签
+  \node[below] at (A) {$A(a, 0)$};
+  \node[above right] at (B) {$B(3, b)$};
+  \node[above left] at (C) {$C(0, c)$};
+  \node[below left] at (O) {$O(0, 0)$};
+  \node[below left] at (CircleCenter) {\footnotesize 中心};
+    
+  % 正确标注∠BAC为60°（由射线 A–C 和 A–B 构成）
+  \draw[thick] (A) + (135:0.5) arc (135:75:0.6);
+  \node at ($(A)+(105:0.7)$) {$60^\circ$};
+
+  % 标注角 CAO 为 \alpha（由射线 A–C 和 A–O 构成）
+  \draw[thick] (A) + (135:0.3) arc (135:180:0.3);
+  \node at ($(A)+(157.5:0.4)$) {$\alpha$};
+  % 标注角 ADB 为 \beta
+  \draw[thick] let \p1=($(A)-(D)$), \p2=($(B)-(D)$), \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)} in ($(D)+(\n1:0.4)$) arc (\n1:\n2:0.4);
+  \node at ($(D)+(-340:0.6)$) {$\beta$};
+ 
+
+  % 标记∠BOC
+  \draw[thick,red] ($(O)!0.7cm!(C)$) arc (90:{atan2(sqrt(3),3)}:0.7cm);
+  \node at ($(O) + (60:0.9)$) {$\color{red}60^\circ$};
+
+  % 标记∠BOA
+  \draw[thick,blue] ($(O)!0.4cm!(A)$) arc (0:{atan2(sqrt(3),3)}:0.4cm);
+  \node[blue] at ($(O) + (15:0.8)$) {$30^\circ$};
+    
+  % 绘制从 C 到 B 的红色弧线
+  \draw[red, thick, line width=1.5pt] let 
+    \p1 = ($(C) - (CircleCenter)$), 
+    \p2 = ($(B) - (CircleCenter)$), 
+    \n1 = {atan2(\y1,\x1)}, 
+    \n2 = {atan2(\y2,\x2)} 
+  in (C) arc(\n1:\n2:\radius);
+
+  % 坐标轴
+  \draw[->,gray!80] (-0.5,0) -- (4,0) node[right] {$x$};
+  \draw[->,gray!80] (0,-0.5) -- (0,4) node[above] {$y$};
+
+  % 从 B 到 x 轴的垂线
+  \coordinate (Bx) at (B |- O);
+  \draw[dashed] (B) -- (Bx);
+  \draw (Bx) -- ++(-0.1,0) -- ++(0,0.1) -- ++(0.1,0);
+  
+  % 图形标签
+  \node[below] at (current bounding box.south) {図1};
+\end{tikzpicture}
+\\
+
+\noindent
+(1)\quad {\color{blue}{円周角の定理}} によって、$\angle \mathrm{COB} = 60°$ と$\angle \mathrm{COA}=90°$で、$\angle \mathrm{AOB} = {\color{red}{30°}} $ となる。それから、図1のように,点 $ B $から$x$軸までの垂線によって、$\tan 30^\circ = \frac{b}{3} = \frac{\sqrt{3}}{3}$ となり、$b = \color{red}\sqrt{3}$ となる。\\
+
+\hosoku \\
+{\color{blue}{円周角の定理:}}
+\begin{enumerate}
+\item {\color{blue}{中心角}} は {\color{red}{円周角}} の2倍である。
+\item 同じ弧に対する円周角は全て等しい。\\
+\end{enumerate}
+\begin{tikzpicture}[thick, scale=2.5]
+
+% Draw the main circle
+\draw[very thick] (0,0) circle(1);
+
+% Points on circumference
+\coordinate (A) at (-0.7,-0.7);
+\coordinate (B) at (0.7,-0.7);
+\coordinate (D) at (-0.22,0.97);
+\coordinate (E) at (0.22,0.97);
+
+% Draw the thick base
+\draw[very thick] (A) -- (B);
+
+% Draw perimeter triangle legs and diagonals
+\draw[very thick] (A) -- (D) -- (B);
+\draw[very thick] (A) -- (E) -- (B);
+
+% The upper "apex" to right and left vertex
+\draw[very thick] (D) -- (E);
+
+% Red circles at upper points
+\fill[red] (D) circle(0.04);
+\fill[red] (E) circle(0.04);
+
+% Draw the center point
+\coordinate (O) at (0,0);
+\fill (O) circle(0.025);
+
+% Labels for the points
+\node[below left] at (A) {A};
+\node[below right] at (B) {B};
+\node[above left] at (D) {D};
+\node[above right] at (E) {E};
+\node[below, yshift=-2pt] at (O) {O};
+
+% Purple square below circle center
+\filldraw[fill=purple!60!blue, draw=purple!80!blue] (-0.04,-0.12) rectangle (0.04,-0.04);
+
+% Dashed lines for central angle
+\draw[thick,dashed] (O) -- (A);
+\draw[thick,dashed] (O) -- (B);
+
+% Purple label "中心角" near bottom
+\node[align=center,color=purple,font=\bfseries,scale=1.1] at (0,-0.35) {\footnotesize 中心角};
+
+% Top right: "円周角" in red
+\node[align=center,color=red,font=\bfseries,scale=1.2, anchor=west] at (0.6,0.95) {\footnotesize 円周角};
+\node[below] at (current bounding box.south) {図2};
+\end{tikzpicture}
+\newpage
+\noindent
+\shomei \ [円周角の定理1が成り立つ前提としての円周角の定理2の証明] \\
+
+\noindent
+「円周角の定理\ $1$」：\textcolor{red}{円周角=中心角の半分} と図2のように、\\[0.5em]
+$\begin{cases}\angle ADB = \frac{1}{2}\angle AOB \\ \angle AEB = \frac{1}{2}\angle AOB\end{cases}\ \implies\ \angle ADB = \angle AEB$ 
+より、同じ弧に対する\\[0.5em]
+円周角は全て等しい。\\
+\\
+\\
+
+\noindent
+(2)\quad 図1のように、$AC$は外接円の直径であるので、$AC=2r=\sqrt{(0-a)^2+(c-0)^2}=\sqrt{a^2+c^2}\ \implies\ r=\frac{1}{2}\sqrt{a^2+c^2}$となり、
+円の中心は$\left(\frac{a}{2},\frac{c}{2}\right)$である。\\
+したがって、この外接円の方程式は$\color{red}(x-\frac{a}{2})^2+(y-\frac{c}{2})^2=\frac{a^2+c^2}{4}$である。
+また、点$B(3,\sqrt{3})$であり、その点Bを式$(x-\frac{a}{2})^2+(y-\frac{c}{2})^2=\frac{a^2+c^2}{4}$に代入すると
+\begin{align*}
+(3-\frac{a}{2})^2+(\sqrt{3}-\frac{c}{2})^2 &=\frac{a^2+c^2}{4}\\
+9-3a+\frac{a^2}{4}+3-\sqrt{3}c+\dfrac{c^2}{4}&=\frac{a^2+c^2}{4}\\
+-\sqrt{3}c+12-3a+\dfrac{a^2+c^2}{4}&=\frac{a^2+c^2}{4}\\
+-\sqrt{3}c &= 3a-12\\
+c &= \frac{3a-12}{\sqrt{3}}\\
+&= {\color{red}{\sqrt{3}(4-a)}}
+\end{align*}
+と表される。\\
+\newpage
+\noindent
+(3)\quad 線分 問題文の条件により、$\mathsf{OB}$ と線分 $\mathsf{AC}$ の交点を $\mathsf{D}$ とし、$\angle \mathsf{OAC} = \alpha$、\\[0.5em]
+$\angle \mathsf{ADB} = \beta$ とおいて、
+$a = 2\sqrt{3}$ のとき、図1のように、$\tan \alpha =\dfrac{c}{a}=\dfrac{4\sqrt{3}-6}{2\sqrt{3}}=\dfrac{4-a}{2}=\color{red}2-\sqrt{3}$ である。$\angle \mathrm{BDA}=\beta=\alpha + 30^\circ$なので、\\[0.5em]
+$\tan \beta=\tan (\alpha + 30^\circ)$を計算すればよい、
+\begin{align*}
+\tan \beta &=\tan (\alpha + 30^\circ)\\
+&= \frac{\tan \alpha + \tan 30^\circ}{1 - \tan \alpha \tan 30^\circ} = \frac{(2-\sqrt{3})+\frac{1}{\sqrt{3}}}{1-(2-\sqrt{3})\cdot\frac{1}{\sqrt{3}}}\\
+&= \frac{(2-\sqrt{3})\sqrt{3}+1}{\sqrt{3}-(2-\sqrt{3})} \\
+&= \dfrac{2\sqrt{3}-2}{2\sqrt{3}-2} = 1
+\end{align*}
+\\
+よって、$\tan \beta = \color{red}1$ である。\\
+
+\end{document}
