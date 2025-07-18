@@ -26,6 +26,7 @@
 \usepackage{enumerate}
 \usepackage{titlesec}
 
+
 % 自定义subsubsection格式
 \titleformat{\subsubsection}
   {\normalfont\normalsize\bfseries}
@@ -526,6 +527,7 @@ z = \frac{\ab{\textsf{S}} + \sqrt{\ab{\textsf{T}}}}{\ab{\textsf{U}}} \left(1 + \
 \hosoku\\
 {\color{blue}{ド$\cdot$モアブル定理}}:$(cos(\theta)+isin(\theta))^n=cos(n\theta)+isin(n\theta)$\\
 
+\noindent
 \shomei\\
 $ n\neq \phi $とおくと、
 \begin{align*}
@@ -536,59 +538,117 @@ $ n\neq \phi $とおくと、
 $ \phi = \theta $のとき、$\left(cos(\theta)+isin(\theta)\right)\left(cos(\theta)+isin(\theta)\right) = (cos(\theta)+isin(\theta))^2=cos(\theta+\theta)+isin(\theta+\theta)=cos(2\theta)+isin(2\theta) $となる。
 したがって、$n$のときには、$(cos(\theta)+isin(\theta))^n=cos(\theta+\cdots+\theta)+isin(\theta+\cdots+\theta)=cos(n\theta)+isin(n\theta)$が成り立つ。\\
 
-\begin{tikzpicture}[scale=2.2]
-  % 圆心和半径
-  \coordinate (CircleCenter) at (1.5, 1.5);
-  \def\radius{2.12132}
-  
-  % 点O, A, C的坐标
-  \coordinate (O) at (0,0);
-  \coordinate (A) at (2,0);
-  \coordinate (C) at (0,3);
-  
-  % 计算B点坐标，使得∠BAC=60°且B在圆上
-  \path[name path=circle] (CircleCenter) circle (\radius);
-  \path[name path=line] (A) -- ++(53.13:4cm);
-  \path[name intersections={of=circle and line, by=B}];
-  
-  % 外接圆
-  \draw[thick] (CircleCenter) circle (\radius);
-  
-  % 三角形
-  \draw[thick] (A) -- (B) -- (C) -- cycle;
+\noindent
+(2)\quad 図形$C$の$x,y$の方程式を求める前に、その方程式の傾きを求めないといけないので、以下の図1のように、傾き$=\tan \theta=\dfrac{y}{x}$,
+$\arg z=\theta=\dfrac{y}{x}$により、
+\begin{enumerate}
+\item[場合1] $k=0\ \implies\ \theta=0\ \implies\ \theta=k\pi\ \implies\ y=0$\\[0.5em]
+\item[場合2] $k=1\ \implies\ \theta=\dfrac{\pi}{3}\ \implies\ \theta=\dfrac{\pi}{3}+k\pi\ \implies\ y=\sqrt{3}x$\\[0.5em]
+\item[場合3] $k=2\ \implies\ \theta=\dfrac{2\pi}{3}\ \implies\ \theta=\dfrac{2\pi}{3}+k\pi\ \implies\ y=-\sqrt{3}x$
+\end{enumerate}
 
-  % 顶点
-  \fill (O) circle (0.03);
-  \fill (A) circle (0.03);
-  \fill (B) circle (0.03);
-  \fill (C) circle (0.03);
-  \fill (CircleCenter) circle (0.02);
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1.5]
 
-  % 标签
-  \node[below] at (A) {$A(2, 0)$};
-  \node[above right] at (B) {$B(3, 2)$};
-  \node[above left] at (C) {$C(0, 3)$};
-  \node[below left] at (O) {$O(0, 0)$};
-  \node[below right] at (CircleCenter) {圆心};
-  
-  % 标记∠BAC
-  \path (A) -- (C) coordinate[pos=0.5] (AC_mid);
-  \path (A) -- (B) coordinate[pos=0.5] (AB_mid);
-  \coordinate (angle_start) at ($(A)!0.4cm!(C)$);
-  \coordinate (angle_end) at ($(A)!0.4cm!(B)$);
-  \draw[thick] (angle_start) arc (123.69:53.13:0.4cm);
-  \node at ($(A) + (88:0.6)$) {$60^\circ$};
-  
-  % 从A到B和A到C的辅助线用于角度标记
-  \draw[gray, dashed] (A) -- ($(A)+(0.5,0)$);
+            % Draw axes
+            \draw[thick,->] (-0.5,0) -- (4,0) node[below] {$x$};
+            \draw[thick,->] (0,-0.5) -- (0,3) node[left] {$y$};
 
-  % 坐标轴
-  \draw[->,gray!80] (-0.5,0) -- (4,0) node[right] {$x$};
-  \draw[->,gray!80] (0,-0.5) -- (0,4) node[above] {$y$};
-\end{tikzpicture}
+            % Origin
+            \node[below left] at (0,0) {$O$};
 
+            % Point P(z)
+            \coordinate (P) at (3,2);
+            \fill[red] (P) circle(2pt);
+            \node[red,above right] at (P) {$P(z)$};
 
+            % Dashed lines
+            \draw[thick,dashed] (P) -- (3,0);
+            \draw[thick,dashed] (P) -- (0,2);
 
+            % Solid line from origin to P (radius r)
+            \draw[thick] (0,0) -- (P);
 
+            % Dotted line from origin to P (for r label)
+            \draw[red,dotted,thick] (0,0) -- (P);
+            \node[red,above,sloped] at (1.3,1) {$r=|z|$};
+
+            % Angle arc
+            \draw[red,thick] (0.8,0) arc (0:33.69:0.8);
+            \node[red,right] at (0.5,0.2) {$\theta$};
+
+            % Labels on axes
+            \node[below] at (3,0) {$x$};
+            \node[left] at (0,2) {$y$};
+
+            % Additional labels
+            \node[below] at (3,-0.3) {$(= r\cos\theta)$};
+            \node[left] at (-0.8,2) {$(= r\sin\theta)$};
+
+            % Complex number formula
+            \node[above] at (2,2.8) {$z = x + iy$};
+            \node[below] at (current bounding box.south) {図1};
+        \end{tikzpicture}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.9]
+            % Clip the drawing to ensure y-values do not exceed the y-axis limits
+            \clip (-4,-3) rectangle (4,3);
+
+            % Draw axes
+            \draw[thick,->] (-4,0) -- (4,0) node[below] {$x$};
+            \draw[thick,->] (0,-3) -- (0,3) node[left] {$y$};
+
+            % Origin
+            \node[below left] at (0,0) {$O$};
+
+            % Vertical dashed lines (asymptotes)
+            \draw[blue,dashed,thick] ({-3.14159/2},-3) -- ({-3.14159/2},3);
+            \draw[blue,dashed,thick] ({3.14159/2},-3) -- ({3.14159/2},3);
+
+            % Function curves (tangent-like function)
+            % Left branch
+            \draw[blue,thick,smooth,domain=-4:-1.67] plot (\x,{tan(\x r)});
+            \draw[blue,thick,smooth,domain=-1.47:-0.1] plot (\x,{tan(\x r)});
+
+            % Right branch  
+            \draw[blue,thick,smooth,domain=0.1:1.47] plot (\x,{tan(\x r)});
+            \draw[blue,thick,smooth,domain=1.67:4] plot (\x,{tan(\x r)});
+
+            % Mark the points for $\theta=0$, $\theta=\pi/3$, and $\theta=2\pi/3$
+            \fill[red] (0,0) circle (2pt) node[below left] {$\theta=0$};
+            \fill[red] ({3.14159/3},{tan(3.14159/3 r)}) circle (2pt) node[above right] {$\theta=\frac{\pi}{3}$};
+            \fill[red] ({2*3.14159/3},{tan(2*3.14159/3 r)}) circle (2pt) node[below right] {$\theta=\frac{2\pi}{3}$};
+
+            % Draw vertical dashed lines to the x-axis
+            \draw[dashed] ({3.14159/3},{tan(3.14159/3 r)}) -- ({3.14159/3},0);
+            \draw[dashed] ({2*3.14159/3},{tan(2*3.14159/3 r)}) -- ({2*3.14159/3},0);
+
+            % Mark the intersections on the x-axis with small square markers
+            \node[draw, rectangle, fill=black, inner sep=1pt] at ({3.14159/3},0) {};
+            \node[draw, rectangle, fill=black, inner sep=1pt] at ({2*3.14159/3},0) {};
+
+            % Labels on x-axis
+            \node[below] at ({-3.14159/2},-0.1) {$-\frac{\pi}{2}$};
+            \node[below] at ({3.14159/2},-0.1) {$\frac{\pi}{2}$};
+            \node[below] at (current bounding box.south) {図2};
+        \end{tikzpicture}
+    \end{minipage}
+\end{figure}
+\newpage
+\noindent
+(2)\quad $C$上に$|z-2-2i|=r$を満たす複素数$z$がただ1個だけ存在するためには、$C$の直線と円は1点で交わる(接する)ことである、このとき、$|x-2-2i|=r$は中心を$2+2i$、半径$r$の円となり、その円は$y=\sqrt{3}$の直線と接するので、
+点$(2+2i)$から直線($y-\sqrt{3}x=0$)までの距離公式を使うと$r=d=\dfrac{|2-2\sqrt{3}|}{\sqrt{1^2+(\sqrt{3})^2}}=\dfrac{|2-2\sqrt{3}|}{2}=\sqrt{3}-1$となる。したがって、$r=\sqrt{3}-1$である。\\
+\\
+
+\noindent
+(3)\quad $z$の値は直線$y=\sqrt{3}x$上にあるので、$z=x+i\sqrt{3}x=(1+i\sqrt{3})x$となるので、$x$の具体値を求めればよい。\\[0.5em]
+円と直線の接点と円の中心の直線は直線$y=\sqrt{3}x$と直交するので、接点と円の中心の直線の傾きは$-\dfrac{1}{\sqrt{3}}$となる。よって、接点と円の中心の直線の方程式は、$y-2=-\dfrac{1}{\sqrt{3}}(x-2)$となる。したがって、接点$(x,\sqrt{3}x)$を代入すると、$\sqrt{3}x-2=-\dfrac{1}{\sqrt{3}}(x-2)$となる。これを解くと、
+$3x-2\sqrt{3}=-x+2\ \implies\ 4x=2+2\sqrt{3}\ \implies\ x=\dfrac{1+\sqrt{3}}{2}$となる。したがって、$z=\dfrac{1+\sqrt{3}}{2}(1+i\sqrt{3})$である。\\
 \end{CJK}
 \end{document}
