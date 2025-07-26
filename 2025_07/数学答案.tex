@@ -1,0 +1,130 @@
+\documentclass{jsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{caption}
+
+\begin{document}
+\begin{CJK}{UTF8}{min}
+
+% Two tables side by side
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.1}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\caption*{文科数学}
+\begin{tabular}{|c|c|c|}
+\hline
+\multirow{2}{*}{問} & \multirow{2}{*}{解答番号} & \multirow{2}{*}{正解} \\
+ &  & \\
+\hline
+\multicolumn{3}{|c|}{I} \\
+\hline
+\multirow{2}{*}{問1} 
+ & \textsf{AB} & 25 \\
+ & \textsf{CDE} & -65 \\
+
+\hline
+\multirow{4}{*}{問2} 
+ & \textsf{FGHI} & 2559 \\
+ & \textsf{JKLM} & 9255 \\
+ & \textsf{NO} & 55 \\
+ & \textsf{PQ} & 18 \\
+\hline
+\multicolumn{3}{|c|}{II} \\
+\hline
+\multirow{5}{*}{問1} 
+ & \textsf{ABC} & 256 \\
+ & \textsf{DE} & 24 \\
+ & \textsf{FJ} & 12 \\
+ & \textsf{GHI} & 144 \\
+ & \textsf{JK} & 84 \\
+\hline
+\multirow{5}{*}{問2}
+ & \textsf{MN} & 43 \\
+ & \textsf{OPQR} & -3-1 \\
+ & \textsf{S} & 0 \\
+ & \textsf{TUVW} & -323 \\
+ & \textsf{XY} & 23 \\
+\hline
+\multicolumn{3}{|c|}{III} \\
+\hline
+ & \textsf{ABCD} & 7877 \\
+ & \textsf{EF} & 23 \\
+ & \textsf{HI} & 13 \\
+ & \textsf{J} & 5 \\
+ & \textsf{KL} & 56 \\
+ & \textsf{MNOP} & 1613 \\
+ & \textsf{QRST} & 5153 \\
+\hline
+\multicolumn{3}{|c|}{IV} \\
+\hline
+ & \textsf{ABC} & 443 \\
+ & \textsf{DEF} & -55 \\
+ & \textsf{GHIJ} & 3450 \\
+ & \textsf{KLMN} & -252 \\
+ & \textsf{OPQ} & 254 \\
+\hline
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\caption*{理科数学}
+\begin{tabular}{|c|c|c|}
+\hline
+\multirow{2}{*}{問} & \multirow{2}{*}{解答番号} & \multirow{2}{*}{正解} \\
+ &  & \\
+\hline
+\multicolumn{3}{|c|}{I} \\
+\hline
+\multirow{4}{*}{問1} 
+ & \textsf{ABC} & 210 \\
+ & \textsf{DE} & 210 \\
+ & \textsf{FG} & 37 \\
+ & \textsf{HIJK} & 3222 \\
+\hline
+\multirow{4}{*}{問2} 
+ & \textsf{L} & 6 \\
+ & \textsf{MNOP} & 1515 \\
+ & \textsf{QRS} & 000 \\
+ & \textsf{TUV} & 536 \\
+\hline
+\multicolumn{3}{|c|}{II} \\
+\hline
+\multirow{5}{*}{問1} 
+ & \textsf{AB} & 12 \\
+ & \textsf{C} & 1 \\
+ & \textsf{DEFG} & 2016 \\
+ & \textsf{HIJ} & 423 \\
+ & \textsf{KL} & 37 \\
+\hline
+\multirow{3}{*}{問2} 
+ & \textsf{MNOP} & 3033 \\
+ & \textsf{QR} & 31 \\
+ & \textsf{STUV} & 1323 \\
+\hline
+\multicolumn{3}{|c|}{III} \\
+\hline
+ & \textsf{AB} & 26 \\
+ & \textsf{CDE} & 103 \\
+ & \textsf{FG} & 46\\
+ & \textsf{HIJK} & 24-2 \\
+\hline
+\multicolumn{3}{|c|}{IV} \\
+\hline
+ & \textsf{ABCD} & 4343 \\
+ & \textsf{EF} & 34 \\
+ & \textsf{GHIJ} & 3414 \\
+ & \textsf{KLMNO} & 31374 \\
+ & \textsf{PQR} & 774 \\
+\hline
+\end{tabular}
+\end{minipage}
+\end{table}
+
+\end{CJK}
+\end{document}

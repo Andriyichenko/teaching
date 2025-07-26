@@ -1,0 +1,9 @@
+PWD /Users/andriyichenko/Documents/teaching/2025_07
+INPUT /usr/local/texlive/2023/texmf.cnf
+INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2023/texmf.cnf
+INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2023/texmf-var/web2c/eptex/platex.fmt
+INPUT /Users/andriyichenko/Documents/teaching/2025_07/文科数学答案.tex
+OUTPUT out/文科数学答案.log
+OUTPUT out/文科数学答案.dvi
