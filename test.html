@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>羚课教师工作准则 (增强互动版)</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Nunito+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --primary-color-light: #eaf4fc;
+            --accent-color: #ffb84d;
+            --accent-color-dark: #e5a43b;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --card-bg: #fff;
+            --text-primary: #2c3e50;
+            --text-secondary: #555;
+            --border-color: #e0e6ed;
+            --success-color: #28a745;
+        }
+        body {
+            margin: 0;
+            padding: 20px 10px;
+            font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg-gradient);
+            transition: background .4s;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { text-align: center; padding-bottom: 20px; color: var(--text-primary); }
+        .header h1 { font-family: 'Nunito Sans', sans-serif; font-size: 2.5em; margin: 0 0 5px 0; color: var(--primary-color); letter-spacing: 1px; }
+        .header-desc {margin:0 0 10px 0;font-weight:500;}
+
+        /* --- 操作栏 --- */
+        .actions-bar {
+            display: flex; justify-content: space-between;
+            align-items: center; margin-bottom: 25px;
+            gap: 15px;
+        }
+        .search-input {
+            font-size:1em; padding:8px 15px; border-radius:8px; border:1.5px solid var(--border-color);
+            width: 250px; outline:none; transition: all .25s ease;
+        }
+        .search-input:focus {border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);}
+        .btn-remind {
+            background: var(--accent-color); color: #fff;
+            border: none; border-radius: 8px; padding: 9px 18px;
+            font-weight: bold; font-size: 1em; cursor:pointer; white-space: nowrap;
+            box-shadow: 0 3px 8px rgba(255, 184, 77, 0.28);
+            transition: all .2s ease;
+        }
+        .btn-remind:hover {filter:brightness(1.08); transform: translateY(-2px);}
+
+        /* --- 通用卡片样式 --- */
+        .card {
+            background: var(--card-bg); border-radius: 16px; padding: 24px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07); margin-bottom: 25px;
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.09); }
+        .card-header h2 {
+            text-align: center; font-size: 1.6em; color: #34495e; margin-top: 0; margin-bottom: 28px;
+        }
+        .card-header h2::after {
+            content: ''; display: block; width: 60%; height: 4px; background: var(--accent-color); border-radius: 2px; margin: 8px auto 0;
+        }
+
+        /* --- 时间线模块 --- */
+        .timeline { position: relative; padding: 20px 0;}
+        .timeline::before {
+            content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+            width: 3px; background: #e9ecef; border-radius: 2px; transform: translateX(-50%);
+        }
+        .timeline-item { display: flex; margin-bottom: 40px; position: relative; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item-content {
+            width: calc(50% - 40px); padding: 20px;
+            background: #f8f9fa; border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: relative;
+            transition: all .25s ease;
+        }
+        .timeline-item-content.is-done { opacity: 0.6; }
+        .timeline-item-content.is-done .timeline-item-title { text-decoration: line-through; }
+        .timeline-item-content:hover { background: var(--primary-color-light); transform: scale(1.02); }
+        .timeline-item:nth-child(odd) .timeline-item-content {
+            margin-left: auto; border-left: none; border-right: 4px solid var(--primary-color);
+        }
+        .timeline-item-date { font-weight: 700; font-size: 1.2em; color: var(--primary-color); margin-bottom: 10px;}
+        .timeline-item-title { font-weight: 500; font-size: 1.1em; color: var(--text-primary); margin-top: 0; margin-bottom: 8px;}
+        .timeline-item-desc { font-size: 0.95em; color: var(--text-secondary); line-height: 1.6;}
+        .timeline-icon {
+            position: absolute; left: 50%; top: 20px; transform: translateX(-50%);
+            width: 50px; height: 50px; background: var(--card-bg); border: 3px solid #e9ecef; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 1.5em; box-shadow: 0 0 0 4px var(--card-bg);
+            transition: all .2s ease;
+        }
+        .timeline-item.is-done .timeline-icon { border-color: var(--success-color); }
+        .progress-checkbox { display: none; }
+        .progress-checkbox-label {
+            position: absolute; top: 15px; right: 15px;
+            width: 28px; height: 28px; background-color: #eee;
+            border-radius: 50%; cursor: pointer; transition: all 0.2s ease;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .progress-checkbox-label::before {
+            content: ''; width: 14px; height: 14px;
+            border-radius: 50%; background-color: white;
+            transition: all 0.2s ease;
+        }
+        .progress-checkbox:checked + .progress-checkbox-label {
+            background-color: var(--success-color);
+        }
+        .progress-checkbox:checked + .progress-checkbox-label::before {
+            content: '✔'; font-size: 14px; color: white; width: auto; height: auto; background-color: transparent;
+        }
+
+        /* --- 进度条 --- */
+        .progress-bar-container { margin-bottom: 20px; }
+        .progress-bar { width: 100%; height: 8px; background-color: #e9ecef; border-radius: 4px; overflow: hidden; }
+        .progress-bar-inner {
+            width: 0%; height: 100%; background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+            border-radius: 4px; transition: width 0.4s ease;
+        }
+        .progress-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+        .progress-text { font-size: 0.9em; color: var(--text-secondary); font-weight: 500;}
+        .progress-buttons .btn-small { padding: 4px 10px; font-size: 0.85em; margin-left: 8px;}
+        .btn-clear { background: #96a1b0; } .btn-clear:hover { background: #808c9a; }
+        .btn-complete { background: var(--success-color); } .btn-complete:hover { background: #218838; }
+
+        /* --- 详细准则模块 --- */
+        details {
+            margin-bottom: 15px; border: 1px solid transparent;
+            overflow: hidden; transition: box-shadow .23s;
+        }
+        details > summary {
+            font-size: 1.2em; font-weight: 500; cursor: pointer; outline: none; padding: 15px 20px;
+            background: #fdfdff; transition: background 0.2s; display: flex; align-items: center; justify-content: space-between;
+            color: #34495e;
+        }
+        details > summary::after {
+            content: '▼'; font-size: 0.8em; transform: rotate(0deg); transition: transform 0.3s ease;
+        }
+        details[open] > summary::after { transform: rotate(180deg); }
+        details[open] > summary {background: var(--primary-color-light); color: var(--primary-color);}
+        .details-content { padding: 5px 25px 20px; border-top: 1px solid #e9ecef; line-height: 1.7; color: #333;}
+        .highlight {
+            background: #fff3cd; color:#856404; padding:3px 8px; border-radius:6px; font-weight:500;
+        }
+        mark.search-highlight {
+            background-color: var(--accent-color); color: white; padding: 2px 4px; border-radius: 3px;
+        }
+        .btn {
+            background: var(--primary-color); color:#fff; border:none;
+            border-radius:8px; padding: 8px 16px; margin: 5px 5px 5px 0;
+            font-weight: bold; font-size: 0.95em; cursor:pointer;
+            box-shadow: 0 2px 6px rgba(74, 144, 226, 0.3);
+            transition: all .2s ease; text-decoration: none; display: inline-block;
+        }
+        .btn:hover { background: #3a7ac8; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3); }
+        .survey-msg {
+            font-size:0.98em; color:#386adc; margin:6px 0 0 0; border-left:3px solid #386adc; padding-left:12px; background-color: #f0f5fc; border-radius: 4px; padding-top: 8px; padding-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before { left: 25px; }
+            .timeline-item { flex-direction: column; align-items: flex-start; }
+            .timeline-item-content, .timeline-item:nth-child(odd) .timeline-item-content {
+                width: calc(100% - 65px); margin-left: 60px; border-right: none; border-left: 4px solid var(--primary-color);
+            }
+            .timeline-icon { left: 25px; transform: translateX(-50%); top: 0; }
+            .actions-bar { flex-direction: column; align-items: stretch;}
+            .search-input { width:auto;}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>羚课教师工作准则</h1>
+        <div class="header-desc">专业 · 高效 · 协同 · 规范</div>
+    </div>
+
+    <div class="actions-bar">
+        <input class="search-input" id="searchInput" type="text" placeholder="关键词快速筛查（如'录制''报告'）" oninput="onSearchInput()">
+        <button class="btn-remind" onclick="alert('请用日历或待办工具同步关键节点时间！\n推荐：内置提醒App、Google Calendar等。')">添加到我的提醒🔔</button>
+    </div>
+
+    <!-- 时间线模块 -->
+    <div class="card" id="timelineSection">
+        <div class="card-header">
+            <h2>🗓️ 每月关键节点时间线</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" id="progressBarInner"></div>
+                </div>
+                <div class="progress-controls">
+                    <span class="progress-text" id="progressText">完成 0 / 3</span>
+                    <div class="progress-buttons">
+                        <button class="btn btn-small btn-clear" onclick="setAllProgress(false)">一键清空</button>
+                        <button class="btn btn-small btn-complete" onclick="setAllProgress(true)">一键完成</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="timeline" id="timeline">
+            <!-- 动态生成 -->
+        </div>
+    </div>
+
+    <!-- 详细准则模块 -->
+    <div id="detailsContainer">
+    <details class="card" open>
+        <summary>📝&nbsp;一、教师主要职责（细则）</summary>
+        <div class="details-content">
+            <h4>1. 老师Touch（每月2次，间隔约1周）</h4>
+            <ul>
+                <li>安排在<span class="highlight">平日19-22点或周末10-22点</span>，每次1小时，内容可灵活结合学生实际需求。</li>
+                <li><b>各流程节点：</b>工作时间表及内容理由要同步填写（每月25日前，2月23日前）。</li>
+                <li>touch结束1天内整理并上传文件（重点：知识点/题目解析/答疑、考点+答案等）。</li>
+                <li>结束同时务必通过群内发送问卷，收集反馈。<br>
+                    <div class="survey-msg">"今天感谢同学们的参加，学习辛苦了~请务必花2分钟填写以下这个小问卷，帮助我们改进Touch的质量。<br>
+                    <a href='https://docs.google.com/forms/d/e/1FAIpQLScM-5PWtu5PsQTXWSqqNkHNTHn0vuB5kMnxQwiPXCj8KIjOIQ/viewform' target='_blank'>填写反馈</a>"</div>
+                </li>
+                <li>全部材料务必上传 <a class="btn" href="https://drive.google.com/drive/folders/1TlfBqjyFUSHVwehRv-x2DA0Wzx9kx3Lm" target="_blank">云盘</a>，并汇总填写<a class="btn" href="https://docs.google.com/spreadsheets/d/1fwhWLLH-tOHwCgRro78aY4eLHZI-N6MWT9IKrCJ97GE/edit#gid=115547256" target="_blank">时间表</a>。</li>
+                <li>每次Touch要明确中心知识点，注重互动，随时鼓励提问，检查理解。</li>
+                <li>可根据参与度灵活增减题目密度和讲解长度。</li>
+            </ul>
+            <h4>2. 月考</h4>
+            <ul>
+                <li>每月组织一次（文综老师每人各一次），题目可按以往真题重组，EJU模拟题每半年一次。</li>
+                <li><b>讲解形式：</b>由原来的直播讲解改为老师自由录制ClassIn课程内的视频讲解。</li>
+                <li><b>提交方式：</b>请在<span class="highlight">各自ClassIn的教室中进行录制</span>，录制完成后我们会统一导出与管理。</li>
+                <li><b>提交内容：</b>包括每月的<span class="highlight">月考试卷正文 + 解说视频</span>。</li>
+                <li><b>时间要求：</b>请于<span class="highlight">每月15日前</span>提交下一次月考的解说与卷子。</li>
+                <li>务必细致校对（避免错字、选项重复、遗漏等），答疑内容要详细。</li>
+                <li>录制要鼓励学生互动，确认听众对解题思路掌握情况。</li>
+                <li>本形式为试行阶段，未来也可能视情况<span class="highlight">调整回直播形式</span>，敬请老师们谅解与配合。</li>
+            </ul>
+            <h4>3. 在线答疑</h4>
+            <ul>
+                <li>学生有问题时24小时内答复，定期检查群消息，确保无遗漏。</li>
+                <li>解答时要指明关键知识点，明确说明，解答后询问学生是否理解。</li>
+            </ul>
+        </div>
+    </details>
+    <details class="card">
+        <summary>🔒&nbsp;二、工作规范与要求</summary>
+        <div class="details-content">
+            <h4>1. 遵守时间</h4>
+            <ul>
+                <li>所有节点需严格遵守，特殊情况要<span class="highlight">至少提前3天</span>联系教学负责人（陈老师或孙老师）。</li>
+                <li>无故延误将被群点名批评，并且影响考评。</li>
+            </ul>
+            <h4>2. 教师规范及形象</h4>
+            <ul>
+                <li>答疑、讲解要注意语言得体、亲切且专业，<b>绝不使用脏话或歧义表达。</b></li>
+                <li>答疑要从学生角度思考，经常主动核查理解度。</li>
+                <li>对羚课网课内容应有基本了解，避免说"你们网课我也不知道"等表达。任职期间，与平台为整体，注意维护形象。</li>
+                <li>严禁在材料、讲解中使用带有其他机构标志的内容。</li>
+            </ul>
+            <h4>3. 合同说明</h4>
+            <ul>
+                <li>如需合同终止，请尽量<span class="highlight">提前3个月</span>申请，便于交接。</li>
+            </ul>
+        </div>
+    </details>
+    </div>
+</div>
+<script>
+    const timelineData = [
+        {
+            id: 'chk-0', icon: '✍️', date: '每月8日前', title: '提交月度报告',
+            desc: '通过Slack提交上月工作报告，内容包括：所有Touch、Live、答疑及课程参与记录。按表格统一格式填写，如：<br>课程名称<br>月日、00:00-00:00 先生touch1回<br>月日、00:00-00:00 Live<br>月分问题答复等。',
+        },
+        {
+            id: 'chk-1', icon: '🎥', date: '每月15日前', title: '提交下月月考解说与卷子',
+            desc: '每位老师需于<span class="highlight">每月15日前</span>提交下一次月考的解说与卷子。请在各自ClassIn的教室中进行录制，录制完成后我们会统一导出与管理。提交内容包括：<span class="highlight">月考试卷正文 + 解说视频</span>。特别注意错字、重复、遗漏。<br><br>特例：本月（6月）为过渡期，请于<span class="highlight">6月30日前</span>提交本次内容（视频内请说"7月月考解说"）。',
+            buttons: [{ text: '上传试卷', href: 'https://drive.google.com/drive/folders/1TlfBqjyFUSHVwehRv-x2DA0Wzx9kx3Lm' }]
+        },
+        {
+            id: 'chk-2', icon: '📅', date: '每月25日前（2月23日前）', title: '填写下月工作时间表',
+            desc: '需填报下月Touch和月考、录制安排，<span class="highlight">内容与理由</span>同步填写。表格见下：',
+            buttons: [{ text: '填写时间表', href: 'https://docs.google.com/spreadsheets/d/1fwhWLLH-tOHwCgRro78aY4eLHZI-N6MWT9IKrCJ97GE/edit#gid=115547256' }]
+        }
+    ];
+
+    const timelineContainer = document.getElementById('timeline');
+    const progressBar = document.getElementById('progressBarInner');
+    const progressText = document.getElementById('progressText');
+
+    function renderTimeline() {
+        timelineContainer.innerHTML = timelineData.map(item => {
+            const buttonsHtml = (item.buttons || []).map(btn => 
+                `<a class="btn" target="_blank" href="${btn.href}">${btn.text}</a>`
+            ).join('');
+
+            return `
+                <div class="timeline-item" id="item-${item.id}">
+                    <div class="timeline-icon">${item.icon}</div>
+                    <div class="timeline-item-content">
+                        <input type="checkbox" id="${item.id}" class="progress-checkbox" onchange="toggleProgress('${item.id}')" />
+                        <label for="${item.id}" class="progress-checkbox-label"></label>
+                        <div class="timeline-item-date">${item.date}</div>
+                        <h3 class="timeline-item-title">${item.title}</h3>
+                        <div class="timeline-item-desc">${item.desc}</div>
+                        ${buttonsHtml}
+                    </div>
+                </div>`;
+        }).join('');
+    }
+
+    function toggleProgress(id) {
+        saveProgress();
+        updateUI();
+    }
+
+    function saveProgress() {
+        const progressState = timelineData.map(item => document.getElementById(item.id).checked);
+        localStorage.setItem('timeline-progress', JSON.stringify(progressState));
+    }
+    
+    function loadProgress() {
+        const savedState = JSON.parse(localStorage.getItem('timeline-progress') || '[]');
+        timelineData.forEach((item, index) => {
+            if (document.getElementById(item.id)) {
+                document.getElementById(item.id).checked = !!savedState[index];
+            }
+        });
+        updateUI();
+    }
+
+    function updateUI() {
+        let checkedCount = 0;
+        timelineData.forEach(item => {
+            const checkbox = document.getElementById(item.id);
+            const itemElement = document.getElementById(`item-${item.id}`);
+            if (checkbox && itemElement) {
+                const contentElement = itemElement.querySelector('.timeline-item-content');
+                if (checkbox.checked) {
+                    checkedCount++;
+                    itemElement.classList.add('is-done');
+                    contentElement.classList.add('is-done');
+                } else {
+                    itemElement.classList.remove('is-done');
+                    contentElement.classList.remove('is-done');
+                }
+            }
+        });
+
+        const total = timelineData.length;
+        const percentage = total > 0 ? (checkedCount / total) * 100 : 0;
+        progressBar.style.width = `${percentage}%`;
+        progressText.textContent = `完成 ${checkedCount} / ${total}`;
+    }
+
+    function setAllProgress(isComplete) {
+        document.querySelectorAll('.progress-checkbox').forEach(cb => {
+            cb.checked = isComplete;
+        });
+        saveProgress();
+        updateUI();
+    }
+
+    // 快筛功能
+    let originalDetailsContent = new Map();
+    document.querySelectorAll('#detailsContainer .details-content').forEach((el, i) => {
+        originalDetailsContent.set(i, el.innerHTML);
+    });
+    
+    function onSearchInput() {
+        let val = document.getElementById('searchInput').value.trim();
+        let re = val ? new RegExp(`(${val.replace(/[.*+?^${}()|[\]\\]/g, '\\__CODE_BLOCK_0__')})`, 'gi') : null;
+
+        // 筛选时间线
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            const text = item.innerText;
+            const contentEl = item.querySelector('.timeline-item-content');
+            if (re && text.match(re)) {
+                item.style.display = '';
+                contentEl.innerHTML = contentEl.innerHTML.replace(/<mark class="search-highlight">([^<]+)<\/mark>/gi, '$1') // 清除旧高亮
+                                                         .replace(re, '<mark class="search-highlight">$1</mark>');
+            } else {
+                item.style.display = re ? 'none' : '';
+                 contentEl.innerHTML = contentEl.innerHTML.replace(/<mark class="search-highlight">([^<]+)<\/mark>/gi, '$1');
+            }
+        });
+
+        // 筛选 details
+        document.querySelectorAll('#detailsContainer details').forEach((detail, i) => {
+            const contentEl = detail.querySelector('.details-content');
+            contentEl.innerHTML = originalDetailsContent.get(i); // 恢复原始内容
+
+            if (!re) {
+                detail.style.display = '';
+                return;
+            }
+
+            let matched = false;
+            let newHTML = contentEl.innerHTML.replace(re, (match) => {
+                matched = true;
+                return `<mark class="search-highlight">${match}</mark>`;
+            });
+
+            if (matched) {
+                contentEl.innerHTML = newHTML;
+                detail.open = true;
+                detail.style.display = '';
+            } else {
+                detail.style.display = 'none';
+            }
+        });
+    }
+
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+        renderTimeline();
+        loadProgress();
+    });
+</script>
+</body>
+</html>
