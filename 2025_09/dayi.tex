@@ -1,0 +1,228 @@
+\documentclass[dvipdfmx,a4paper,12pt]{jarticle}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning, intersections, calc, arrows.meta, math, through}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,breakable}
+\usepackage[inline]{enumitem} % provides enumerate* (inline lists)
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{xspace}
+\usepackage{newpxtext}
+\usepackage[utf8]{inputenc} %中国語コンパイル環境-cjkホットショット
+\usepackage{CJKutf8} %中国語コンパイル環境
+\usepackage{okumacro} %漢字ruby
+\renewcommand{\abstractname}{注意事項}
+\newtagform{textbf}[	extbf]{[}{]}
+\usetagform{textbf}
+\newcommand*{\ie}{\textbf{\textit{i.e.}}\@\xspace}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newtcbtheorem[]{reidai}{例題}
+{fonttitle=\gtfamily\sffamily\bfseries\upshape\large,
+colframe=black,colback=black!15!white,
+rightrule=1pt,leftrule=1pt,bottomrule=2pt,
+colbacktitle=black,theorem style=standard,breakable,arc=10pt}
+{tha}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\newtheoremstyle{mystyle}%
+  {}%                      % 上部スペース
+  {}%                      % 下部スペース
+  {}%                      % 本文フォント
+  {}%                      % 1行目のインデント量
+  {\bfseries}%             % 見出しフォント
+  :%                       % 見出し後の句読点
+  { }%                     % 見出し後のスペース
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+\theoremstyle{mystyle}
+% \setcounter{section}{0}
+% \stepcounter{section}
+% セクションカウンターを使用するが、表示はしない新しいセクションコマンドを作成
+\newtheorem{dfn}{\texttt{Def.}}[section]
+\newtheorem{exm}[dfn]{\texttt{Ex.}}
+\newtheorem{prop}[dfn]{\texttt{Prop.}}
+\newtheorem{lem}[dfn]{\texttt{Lem.}}
+\newtheorem{thm}[dfn]{\texttt{Thm.}}
+\newtheorem{cor}[dfn]{\texttt{Cor.}}
+\newtheorem{rem}[dfn]{\texttt{Rem.}}
+\newtheorem{fact}[dfn]{\texttt{Fact}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\usepackage{lipsum} % 用于生成示例文本
+\usepackage{float} % 强制浮动
+\usepackage{tikz} % 用于定位
+%排版
+\newcommand{\kai}%解答
+{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (3.3,1) node{\large\textgt{解 答}};
+\draw[thick, rounded corners=3pt,] (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2)--cycle;
+\end{tikzpicture};}
+\newcommand{\shomei}%証明
+{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (3.3,1.2) node{\textgt{証 明}};
+\draw[double,thick,rounded corners=3pt,] (0,0)--(6.5,0)--(6.5,2.4)--(0,2.4)--cycle;
+\end{tikzpicture}}
+%補足
+\newcommand{\hosoku}{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (6,1) node{\large\textgt{補足}};
+\fill (0,1)--(1,0)--(2,1)--(1,2)--cycle;
+\fill[gray] (1,1)--(2,0)--(3,1)--(2,2)--cycle;
+\fill (2,1)--(3,0)--(4,1)--(3,2)--cycle;
+\fill (10,1)--(11,0)--(12,1)--(11,2)--cycle;
+\fill[gray] (9,1)--(10,0)--(11,1)--(10,2)--cycle;
+\fill (8,1)--(9,0)--(10,1)--(9,2)--cycle;
+\end{tikzpicture};}
+\newcommand{\abb}[1]{%
+\begin{tikzpicture}[baseline]
+\node[draw=black, 
+      rectangle, 
+      minimum width=0.8cm, 
+      minimum height=0.3cm, 
+      fill=gray!25, 
+      font=\bfseries,
+      line width=1pt,
+      inner sep=2pt,
+      anchor=base] {#1};
+\end{tikzpicture}%
+}
+\newcommand{\ab}[1]{%
+\begin{tikzpicture}[baseline]
+\node[draw=black, 
+      rectangle, 
+      minimum width=0.8cm, 
+      minimum height=0.3cm, 
+      font=\bfseries,
+      line width=1pt,
+      inner sep=2pt,
+      anchor=base] {$#1$};
+\end{tikzpicture}%
+}
+
+\newcommand{\maru}[1]{\tikz[baseline=-0.7ex]{
+    \node[shape=circle,draw,inner sep=1pt,minimum size=5pt,anchor=center] {\footnotesize #1};}}
+\definecolor{headercolor}{RGB}{220,220,220}
+\definecolor{rowcolor1}{RGB}{245,245,245}
+\definecolor{rowcolor2}{RGB}{255,255,255}
+%注意
+\newcommand{\chui}{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\fill (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2);
+\draw (3.3,1) node[white]{\large\textgt{注意！}};
+\draw[thick] (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2)--cycle;
+\end{tikzpicture};}
+\title{\vspace{-3cm} 陳旭銘さんへの質疑応答}  %タイトル
+\author{Linc\ -\ 伊}  %著者名
+\date{}  %日付
+\begin{document}
+\maketitle
+%\vspace{-0.4cm}
+%\begin{figure}[H]
+%\centering
+%\begin{tikzpicture}[remember picture, overlay]
+%   \node[anchor=north east] at (current page.north east) {%
+%        \includegraphics[width=2cm]{pics/qr.png} % 修正图片地址
+%    };
+%    \node[anchor=north east, yshift=-2cm] at (current page.north east) {デジタル版はここ};
+%\end{tikzpicture}
+%\label{fig:my_label}
+%\end{figure}
+%\begin{abstract} %概要
+  %注意事項
+%\end{abstract}
+%\begin{reidai}{2次方程式}{解答}
+%\end{reidai}
+%\begin{proof}
+%\end{proof}
+\section*{\textbf{問題\, 1}}
+\vspace{0.5cm}
+\begin{enumerate}
+\item $(-x+2y+3z)(2x-3y+4z)(3x+4y-5z)$ を展開したとき、$xyz$ の係数は \ab{\textsf{ABC}} である。\\[0.5em]
+
+\item $\displaystyle \frac{479}{700}$ を小数で表したとき、小数第 $2023$ 位の数字は \ab{\textsf{D}} である。\\[0.5em]
+
+\item 循環小数を次のように書き表すことにする。
+
+例　$0.121212\cdots=0.\dot{1}\dot{2}$ 　$0.345345345\cdots=0.\dot{3}\dot{4}\dot{5}$
+
+$a = 0.228,\ \ b=0.335244$ のとき，$x=2a-b$ を循環小数で表すと
+\[
+x=0.\dot{\ab{\textsf{E}}}\dot{\ab{\textsf{F}}}
+\]
+である。ここで
+
+\[
+100x = \ab{\textsf{GH}} + x
+\]
+
+であることに注意すると、$x$ は既約分数として
+
+\[
+x = \frac{\ab{\textsf{I}}}{\ab{\textsf{JK}}}
+\]
+
+と表される。
+\end{enumerate}
+
+\newpage
+\section*{\textbf{解答}}
+(1) \quad $(-x)(-3y)(-5z) + (-x)(4z)(4y) + (2y)(2x)(-5z) + (2y)(4z)(3x) \\
+\quad + (3z)(2x)(4y) + (3z)(-3y)(3x) = {\color{red}{-30}}xyz$\\[0.5em]
+
+(2)\quad $\dfrac{479}{700} = 0.68\dot{4}2857\dot{1} $であって、小数第3位から循環であり、$(2023-2) \div 6 = 336 \cdots 5 $である。すなわち、小数第2023位は5番目の数字であるから、答えは$\color{red}7$である。\\[0.5em]
+
+(3) \quad $a = 0.228$ より、　$2a = 0.456$である。また、$b = 0.\dot{3}3524\dot{4}$ であるから、$2a-b$を循環小数で表すと、$x=2a-b=0.\color{red}\dot{1}\dot{2}$である。ここで、$100x=12.121212\cdots$であるので、$100x={\color{red}{12}}+x$
+より、$99x=12$より、$x=\dfrac{12}{99}=\color{red}\dfrac{4}{33}$である。
+
+\newpage
+\section*{\textbf{問題\, 2}}
+$x$ についての2次不等式
+
+\begin{align*}
+&x^2 - 3x + 2 < 0 \quad \cdots\cdots \quad \maru{1} \\
+&x^2 - 2ax - 3a^2 < 0 \quad \cdots\cdots \quad \maru{2}
+\end{align*}
+
+を考える。
+
+\begin{enumerate}
+\item 不等式 \maru{1} の解は \ab{\textsf{L}} $< x <$ \ab{\textsf{M}} である。
+
+\item 次の文中の \ab{\textsf{O}} $\sim$ \ab{\textsf{Q}} には、下の選択肢 \maru{0} $\sim$ \maru{9} の中から適するものを選びなさい。また、\ab{\textsf{N}} には、適する数を入れなさい。
+
+不等式 \maru{2} の解は
+
+\begin{align*}
+a > \ab{\textsf{N}} \text{のとき} \quad &\ab{\textsf{O}} \\
+a = \abb{\textsf{N}} \text{のとき} \quad &\ab{\textsf{P}} \\
+a < \abb{\textsf{N}} \text{のとき} \quad &\ab{\textsf{Q}}
+\end{align*}
+
+である。
+
+
+\begin{tabular}{l@{\hspace{2cm}}l}
+\maru{0} \quad $a < x < -3a$ & \maru{5} \quad $-3 < x < a^2$ \\[0.2em]
+\maru{1} \quad $-a < x < 3a$ & \maru{6} \quad $-3a < x < -a$ \\[0.2em]
+\maru{2} \quad $-2a < x < 3a$ & \maru{7} \quad $3a < x < a$ \\[0.2em]
+\maru{3} \quad $1 < x < 3a^2$ & \maru{8} \quad すべての実数 \\[0.2em]
+\maru{4} \quad $3a < x < -a$ & \maru{9} \quad 解はなし
+\end{tabular}
+\end{enumerate}
+\newpage
+\section*{\textbf{解答}}
+(1) \quad $x^2 - 3x + 2 < 0 $より、$(x-1)(x-2) < 0$となる。したがって、不等式\maru{1}の解は $ 1 < x < 2 $である。\\[0.5em]
+
+(2) \quad $x^2 - 2ax - 3a^2 < 0 \quad \text{より} \quad (x-3a)(x+a) < 0$となるが、$a$の値によって場合分けを考える必要がある。
+まず、$(x-3a)(x+a) = 0$を解くと、その2つの解は$3a,-a$である。したがって、不等式\maru{2}の解は
+\begin{align*}
+\begin{cases}
+a > {\color{red}0} \text{のとき}    & \color{red}-a < x < 3a \,\maru{1}\\
+a = {\color{red}0} \text{のとき}   & x^2 < 0\quad\text{\color{red}解はなし\,\maru{9}}\\
+a < {\color{red}0} \text{のとき}   & \color{red}3a < x < -a \,\maru{4}
+\end{cases}
+\end{align*}
+
+
+\end{document}
