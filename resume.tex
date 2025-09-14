@@ -1,0 +1,148 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{pxrubrica}
+\usepackage{xeCJK}
+
+% 设置字体
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setCJKmainfont{PingFang SC}
+
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
+
+% 定义主题色
+\definecolor{mainblue}{RGB}{17,85,204}
+\definecolor{lightgray}{RGB}{128,128,128}
+
+% 设置章节格式
+\titleformat{\section}{\bfseries\large\color{mainblue}}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{2ex}{1ex}
+
+% 设置列表格式
+\setlist[itemize]{noitemsep, leftmargin=15pt, topsep=0pt}
+
+% 去除页码
+\pagestyle{empty}
+
+% 自定义命令
+\newcommand{\resumeItem}[2]{
+    \item \textbf{#1} \hfill \textcolor{lightgray}{#2}
+}
+
+\newcommand{\resumeSubheading}[4]{
+    \textbf{#1} \quad #2 \hfill \textcolor{lightgray}{#3}\\
+    \textit{\small#4}
+}
+
+\begin{document}
+
+% 个人信息部分
+\begin{center}
+    {\Huge \textbf{伊\, 冉}}\\[8pt]
+      {\large \texttt{Andre\, YI}}\\[4pt]
+      \small
+      \faHome\ \href{https://www.andreyis.com}{www.andreyis.com} \quad
+      \faEnvelope\ \href{mailto:andreyi@outlook.jp}{andreyi@outlook.jp} \quad
+    \faPhone\ \href{tel:070-8493-5282}{070-8493-5282} \quad
+      % \faMapMarker\ 上海市浦东新区\\[2pt]
+      \faGithub\ \href{https://github.com/Andriyichenko}{github.com/Andriyichenko} \quad
+      
+\end{center}
+
+\vspace{-5pt}
+
+% 个人简介
+\section*{个人简介}
+我是一名立命馆大学数学系在读的本科生，预计2026年3月毕业，后面会继续在本校攻读2年的研究生学位。
+我的兴趣包括数学，编程，数据分析和机器学习。本人熟练掌握\texttt{LaTeX}，\texttt{Python}，\texttt{C++}和前端编程语言，可以给学生编写出简单易懂的讲义资料，帮助同学节省大量记笔记时间。
+日常生活中我热衷于解决复杂的数学问题，并且喜欢与学生分享我的知识和备考经验。
+
+
+\section*{自我介绍}
+作为一名数学专业的学生，我在备考阶段参加了3次\texttt{EJU}考试，数学成绩从110+提升到170+。
+这段从基础薄弱到扎实掌握的亲身经历，让我深刻体会到数学学习中的各种难点和有效的突破方法。
+正是这种"过来人"的体验，使我能够准确识别基础薄弱学生的数学痛点和困惑，并给出针对性的指导。
+进入大学后，通过系统而严谨的数学体系的学习，我不仅在理论基础上得到了扎实的训练，更重要的是培养了严密的逻辑思维能力。
+这使我在高中数学的知识证明和解题指导方面具备了深厚的功底和独特的见解。
+我深知数学教学不仅要传授快速解题技巧，更要培养学生的数学思维和逻辑推理能力。
+我相信，凭借自己的学习经历、扎实的专业基础和对数学教育的热情，我可以够帮助到学生提升成绩。
+在教学技能方面，我熟练掌握\texttt{Python}和\texttt{LaTeX}等现代化教学工具，能够编写结构清晰、排版精美的教案，并运用\texttt{Python}进行数学建模和数据可视化，让抽象的数学概念变得直观易懂（可以参考我排版的ゼミ发表文案 \href{https://github.com/Andriyichenko/research/blob/main/semi/ML3.10/out/ML3.10.pdf}{Click})。
+在教学方法上，我会根据不同学生的特点采用个性化的教学策略，确保每位学生都能在数学学习中获得成就感，让学生在理解中掌握，在应用中深化。
+
+% 教育背景
+\section*{教育背景}
+\resumeSubheading{立命館大学}{理工学部数理学科}{2022.04 -- 2026.03(見込み)}{}
+\begin{itemize}
+    \item 主修课程：微積分学、線形代数、確率論、確率過程論、数理統計、関数解析、機械学習、数理ファイナンスなど
+\end{itemize}
+
+% 工作经历
+\section*{工作经历}
+\resumeSubheading{羚课教育(\texttt{株式会社Linc})}{\texttt{EJU}文理数学答疑讲师}{2025.06 -- 2025.11(見込み)}{}
+\begin{itemize}
+    \item 对于每周的答疑，同学满意度高，多次获得学生好评
+    \item \texttt{EJU} 文理班的月考试卷的制作和解答
+    \item 多次参与该私塾的教学研讨会，分享教学经验和方法
+\end{itemize}
+
+% 项目经历
+% \section*{项目经历}
+% \textbf{智能问答系统} \hfill \textcolor{lightgray}{2022.03 -- 2022.08}
+% \begin{itemize}
+%     \item 基于BERT模型构建中文智能问答系统，准确率达到92\%
+%     \item 使用Python+Flask搭建后端API，React构建前端界面
+%     \item 部署在阿里云，支持千级并发用户访问
+%     \item GitHub Star数: 500+
+% \end{itemize}
+
+% \vspace{6pt}
+% \textbf{电商数据分析平台} \hfill \textcolor{lightgray}{2021.09 -- 2022.02}
+% \begin{itemize}
+%     \item 使用Spark处理TB级电商交易数据，构建用户行为分析报表
+%     \item 实现实时数据流处理，支持秒级数据更新
+%     \item 开发数据可视化Dashboard，为业务决策提供数据支持
+% \end{itemize}
+
+% 技术技能
+\section*{技术技能}
+\begin{itemize}
+    \item \textbf{编程语言：} \texttt{Python}, \texttt{C++}, \texttt{LaTeX}, \texttt{JavaScript}, \texttt{HTML/CSS}
+    \item \textbf{数据分析：} \texttt{Pandas}, \texttt{NumPy}, \texttt{Matplotlib}, \texttt{Seaborn}
+    \item \textbf{数据库：} \quad \texttt{MySQL}
+    \item \textbf{机器学习：} \texttt{TensorFlow}, \texttt{PyTorch}, \texttt{Scikit-learn}
+\end{itemize}
+
+% 获奖情况
+% \section*{获奖情况}
+% \begin{itemize}
+%     \resumeItem{ACM国际大学生程序设计竞赛亚洲区域赛金奖}{2021.12}
+%     \resumeItem{全国大学生数学建模竞赛一等奖}{2021.09}
+%     \resumeItem{清华大学学业优秀奖学金}{2020-2022}
+%     \resumeItem{清华大学科技创新优秀奖}{2022.06}
+% \end{itemize}
+
+% 证书认证
+\section*{证书认证}
+\begin{itemize}
+    \resumeItem{日本語能力試験\texttt{N1}}{2019.07}
+    \resumeItem{\texttt{EJU}数学(170+)}{2021.12}
+    \resumeItem{\texttt{TOEIC}(690)}{2022.11}
+
+\end{itemize}
+
+% 其他信息
+% \section*{其他信息}
+% \begin{itemize}
+%     \item \textbf{技术博客：} \href{https://blog.zhangsan.com}{blog.zhangsan.com} (月访问量1万+)
+%     \item \textbf{开源贡献：} 为多个知名开源项目贡献代码，总计PR 50+
+%     \item \textbf{兴趣爱好：} 摄影、徒步、阅读技术书籍、参与技术社区活动
+%     \item \textbf{语言能力：} 中文(母语)、英文(流利)、日语(初级)
+% \end{itemize}
+
+\end{document}

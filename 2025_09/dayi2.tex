@@ -1,0 +1,171 @@
+\documentclass[dvipdfmx,a4paper,12pt]{jsarticle}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning, intersections, calc, arrows.meta, math, through}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,breakable}
+\usepackage[inline]{enumitem} % provides enumerate* (inline lists)
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{xspace}
+\usepackage{newpxtext}
+\usepackage[utf8]{inputenc} %中国語コンパイル環境-cjkホットショット
+\usepackage{CJKutf8} %中国語コンパイル環境
+\usepackage{okumacro} %漢字ruby
+\renewcommand{\abstractname}{注意事項}
+\newtagform{textbf}[	extbf]{[}{]}
+\usetagform{textbf}
+\newcommand*{\ie}{\textbf{\textit{i.e.}}\@\xspace}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newtcbtheorem[]{reidai}{例題}
+{fonttitle=\gtfamily\sffamily\bfseries\upshape\large,
+colframe=black,colback=black!15!white,
+rightrule=1pt,leftrule=1pt,bottomrule=2pt,
+colbacktitle=black,theorem style=standard,breakable,arc=10pt}
+{tha}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\newtheoremstyle{mystyle}%
+  {}%                      % 上部スペース
+  {}%                      % 下部スペース
+  {}%                      % 本文フォント
+  {}%                      % 1行目のインデント量
+  {\bfseries}%             % 見出しフォント
+  :%                       % 見出し後の句読点
+  { }%                     % 見出し後のスペース
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+\theoremstyle{mystyle}
+% \setcounter{section}{0}
+% \stepcounter{section}
+% セクションカウンターを使用するが、表示はしない新しいセクションコマンドを作成
+\newtheorem{dfn}{\texttt{Def.}}[section]
+\newtheorem{exm}[dfn]{\texttt{Ex.}}
+\newtheorem{prop}[dfn]{\texttt{Prop.}}
+\newtheorem{lem}[dfn]{\texttt{Lem.}}
+\newtheorem{thm}[dfn]{\texttt{Thm.}}
+\newtheorem{cor}[dfn]{\texttt{Cor.}}
+\newtheorem{rem}[dfn]{\texttt{Rem.}}
+\newtheorem{fact}[dfn]{\texttt{Fact}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\usepackage{lipsum} % 用于生成示例文本
+\usepackage{float} % 强制浮动
+\usepackage{tikz} % 用于定位
+%排版
+\newcommand{\kai}%解答
+{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (3.3,1) node{\large\textgt{解 答}};
+\draw[thick, rounded corners=3pt,] (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2)--cycle;
+\end{tikzpicture};}
+\newcommand{\shomei}%証明
+{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (3.3,1.2) node{\textgt{証 明}};
+\draw[double,thick,rounded corners=3pt,] (0,0)--(6.5,0)--(6.5,2.4)--(0,2.4)--cycle;
+\end{tikzpicture}}
+%補足
+\newcommand{\hosoku}{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (6,1) node{\large\textgt{補足}};
+\fill (0,1)--(1,0)--(2,1)--(1,2)--cycle;
+\fill[gray] (1,1)--(2,0)--(3,1)--(2,2)--cycle;
+\fill (2,1)--(3,0)--(4,1)--(3,2)--cycle;
+\fill (10,1)--(11,0)--(12,1)--(11,2)--cycle;
+\fill[gray] (9,1)--(10,0)--(11,1)--(10,2)--cycle;
+\fill (8,1)--(9,0)--(10,1)--(9,2)--cycle;
+\end{tikzpicture};}
+\newcommand{\abb}[1]{%
+\begin{tikzpicture}[baseline]
+\node[draw=black, 
+      rectangle, 
+      minimum width=0.8cm, 
+      minimum height=0.3cm, 
+      fill=gray!25, 
+      font=\bfseries,
+      line width=1pt,
+      inner sep=2pt,
+      anchor=base] {#1};
+\end{tikzpicture}%
+}
+\newcommand{\ab}[1]{%
+\begin{tikzpicture}[baseline]
+\node[draw=black, 
+      rectangle, 
+      minimum width=0.8cm, 
+      minimum height=0.3cm, 
+      font=\bfseries,
+      line width=1pt,
+      inner sep=2pt,
+      anchor=base] {$#1$};
+\end{tikzpicture}%
+}
+
+\newcommand{\maru}[1]{\tikz[baseline=-0.7ex]{
+    \node[shape=circle,draw,inner sep=1pt,minimum size=5pt,anchor=center] {\footnotesize #1};}}
+\definecolor{headercolor}{RGB}{220,220,220}
+\definecolor{rowcolor1}{RGB}{245,245,245}
+\definecolor{rowcolor2}{RGB}{255,255,255}
+%注意
+\newcommand{\chui}{\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\fill (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2);
+\draw (3.3,1) node[white]{\large\textgt{注意！}};
+\draw[thick] (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2)--cycle;
+\end{tikzpicture};}
+\title{\vspace{-3cm} 陳旭銘さんへの質疑応答}  %タイトル
+\author{Linc\ -\ 伊}  %著者名
+\date{}  %日付
+\begin{document}
+\maketitle
+%\vspace{-0.4cm}
+%\begin{figure}[H]
+%\centering
+%\begin{tikzpicture}[remember picture, overlay]
+%   \node[anchor=north east] at (current page.north east) {%
+%        \includegraphics[width=2cm]{pics/qr.png} % 修正图片地址
+%    };
+%    \node[anchor=north east, yshift=-2cm] at (current page.north east) {デジタル版はここ};
+%\end{tikzpicture}
+%\label{fig:my_label}
+%\end{figure}
+%\begin{abstract} %概要
+  %注意事項
+%\end{abstract}
+%\begin{reidai}{2次方程式}{解答}
+%\end{reidai}
+%\begin{proof}
+%\end{proof}
+\section*{\textbf{\text{III}の解答}}
+\noindent
+\textbf{(1)}\quad $a,b$ を素因数分解する：
+\[
+a=588=2^2\cdot3\cdot7^2,\qquad
+b=1260=2^2\cdot3^2\cdot5\cdot7.
+\]
+よって, $\gcd(a,b)=2^{\color{red}{2}}\cdot3\cdot {\color{red}{7}}^{\color{red}{2}}={\color{red}{84}}$となる。 \quad ここで、 $ \gcd(a,b) $は $a,b$ の公約数のうち最大のものを表す。また, 
+$\mathrm{lcm}(a,b)=2^2\cdot3^2\cdot5\cdot7^2=1260$となる。 \quad ここで、 $ \mathrm{lcm}(a,b) $は $a,b$ の公倍数のうち最小のものを表す. \\
+
+
+\noindent
+\textbf{(2)}\quad
+下の2つの条件を満たす正の整数$c$ を考える。
+\begin{enumerate}[label=(\roman*)]
+  \item $\gcd(a,b,c)=\gcd(a,b)$.
+  \item $\mathrm{lcm}(a,b,c)=4 \mathrm{lcm}(a,b)$.
+\end{enumerate}
+
+\noindent
+そこで $c$ を(ii)の条件より、$c$の素因数$2$の個数は$4$個であることがわかる。また、(i)と(ii)の条件より、$c$の素因数$3$の個数は$1$個\ or\ $2$個であり、$c$の素因数$5$の個数は$0$個\ or\ $1$個であり、$c$の素因数$7$の個数は$1$個\ or\ $2$個である。したがって、積の法則により、$c$は全部で$2\times2\times2={\color{red}{8}}$通り存在する。そのような$c$の中で最小のものは$2^4\cdot3^1\cdot5^0\cdot7^1={\color{red}{336}}$である。\\[1em]
+
+\textbf{(3)}\quad
+$ax-by=336$に対し，$a=588,\ b=1260$ を代入して
+\[
+588x-1260y=336.\quad \cdots (1)
+\]
+両辺を $\gcd(588,1260)=84$ で割ると7x-15y=4となる。ここで、$x$,$y$は整数解である。よって、${\color{red}{7}} x-{\color{red}{15}} y={\color{red}{4}}\ \implies\ 7x=15y+4\implies$\\[0.5em]
+$\begin{cases}y=1,\ 7x=19(条件満たさない)\\y=2,\ 7x=34(条件満たさない)\\y=3,\ 7x=49\ \implies\ x=7\end{cases}$\\[0.5em]
+となる。よって、$x={\color{red}{7}},\ y={\color{red}{3}} $は$x,y$の整数解のうち、$y$が最小の正整数解である。\\[1em]
+
+\noindent
+よって、$\begin{cases}7x-15y=4\\7\cdot 7-15\cdot 3=4\end{cases}$\ より、$7(x-7)-15(y-3)=0\ \implies\ 7(x-7)=15(y-3)$、$7$と$15$は互いに素であるから$\begin{cases}x-7=15k\\y-3=7k\end{cases}$ $\implies$ $\begin{cases}x={\color{red}{7+15k}}\\y={\color{red}{3+7k}}\end{cases}$、ただし、$k$は整数。
+\end{document}
